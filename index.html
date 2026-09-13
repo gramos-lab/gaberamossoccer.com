@@ -41,7 +41,7 @@
       "jobTitle": "U.S. Soccer Coach Educator; Co-Founder & COO, Royal Sporting Group",
       "description": "Licensed U.S. Soccer coach, coach educator, and player development specialist on Long Island, NY. Holder of the U.S. Soccer B License and 3\u00d7 Coach of the Year (2023).",
       "worksFor": { "@id": "https://gaberamossoccer.com/#rsg" },
-      "alumniOf": [ { "@type": "CollegeOrUniversity", "name": "Molloy University" } ],
+      "alumniOf": [ { "@type": "CollegeOrUniversity", "name": "Molloy University" }, { "@type": "CollegeOrUniversity", "name": "Iona University" }, { "@type": "HighSchool", "name": "Chaminade High School" } ],
       "hasCredential": { "@type": "EducationalOccupationalCredential", "name": "U.S. Soccer B License", "credentialCategory": "license", "recognizedBy": { "@type": "Organization", "name": "U.S. Soccer Federation" } },
       "homeLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressRegion": "NY", "addressCountry": "US" } },
       "sameAs": [ "https://www.linkedin.com/in/gaberamosmgmt/", "https://royalsportinggroup.com/" ]
@@ -156,6 +156,20 @@
   /* skip */
   .skip{position:absolute;left:16px;top:-48px;z-index:50;background:var(--navy);color:#fff;padding:10px 16px;border-radius:999px;font-weight:600;transition:top .2s}
   .skip:focus{top:12px}
+
+  /* ================= PLAYING ================= */
+  .play-grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media (min-width:640px){.play-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
+  @media (min-width:1100px){.play-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .pcard{background:var(--off);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:14px;min-height:250px}
+  .pcard .lvl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--red)}
+  .pcard h3{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:22px;line-height:1.05;color:var(--navy)}
+  .pcard .role{color:var(--muted);font-size:14px;margin-top:-6px}
+  .pcard .team+.team{padding-top:12px;border-top:1px solid var(--line)}
+  .pcard .team{display:flex;flex-direction:column;gap:6px}
+  .pcard .hon{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+  .pcard .hon li{display:flex;align-items:baseline;gap:10px;font-size:14px;font-weight:500}
+  .pcard .hon .x{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:18px;line-height:1;color:var(--red);min-width:30px;font-variant-numeric:tabular-nums}
 
   /* ================= HERO (inset card) ================= */
   .hero-shell{padding:12px}
@@ -528,8 +542,48 @@
     </div>
   </section>
 
+  <!-- PLAYING -->
+  <section class="offsec" id="playing">
+    <div class="wrap">
+      <div class="split">
+        <h2 class="d">Playing<br><em>career</em></h2>
+        <div class="side"><p class="lead">Before the whistle: a playing career that ran from Long Island youth soccer through Division I and the international stage.</p></div>
+      </div>
+      <div class="play-grid">
+        <article class="pcard">
+          <span class="lvl">Youth club</span>
+          <div class="team"><h3>Albertson Red Storm Clash</h3><div class="role">Club team</div></div>
+          <ul class="hon">
+            <li><span class="x">5&times;</span>State Champions</li>
+            <li><span class="x">2&times;</span>Regional Champions</li>
+            <li><span class="x">1&times;</span>National Finalist</li>
+          </ul>
+        </article>
+        <article class="pcard">
+          <span class="lvl">High school</span>
+          <div class="team"><h3>Chaminade High School</h3><div class="role">Varsity Captain</div></div>
+          <ul class="hon">
+            <li><span class="x">1&times;</span>State Champion (2003)</li>
+          </ul>
+        </article>
+        <article class="pcard">
+          <span class="lvl">Collegiate</span>
+          <div class="team"><h3>Iona University</h3><div class="role">NCAA Division I</div></div>
+          <div class="team"><h3>Molloy University</h3><div class="role">NCAA Division II &mdash; Captain</div></div>
+        </article>
+        <article class="pcard">
+          <span class="lvl">International</span>
+          <div class="team"><h3>Puerto Rico National Team</h3><div class="role">Gold Cup Qualifiers 2013</div></div>
+          <ul class="hon">
+            <li><span class="x">2</span>Appearances</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- COURSES -->
-  <section class="offsec" id="courses">
+  <section id="courses">
     <div class="wrap">
       <div class="split">
         <h2 class="d">Upcoming<br><em>courses</em></h2>
