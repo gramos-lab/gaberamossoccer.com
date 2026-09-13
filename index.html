@@ -282,7 +282,7 @@
   <div class="hero" id="top">
     <div class="hero-img">
       <img src="img/hero.jpg" alt="Gabe Ramos in a pre-match huddle with the Manhasset varsity team" width="1800" height="1778" fetchpriority="high" decoding="async">
-      <video class="hero-video" muted loop playsinline autoplay preload="none" poster="img/hero-poster.jpg" data-src="img/hero.mp4" aria-hidden="true" tabindex="-1"></video>
+      <video class="hero-video" muted loop playsinline autoplay preload="metadata" poster="img/hero-poster.jpg" data-src="img/hero.mp4" aria-hidden="true" tabindex="-1"></video>
     </div>
 
     <header class="nav">
@@ -506,8 +506,11 @@
     var v = document.querySelector('.hero-video');
     if (v && matchMedia('(min-width:900px) and (prefers-reduced-motion: no-preference)').matches) {
       var src = document.createElement('source'); src.src = v.dataset.src; src.type = 'video/mp4';
-      v.appendChild(src); v.load();
-      v.addEventListener('canplay', function () { v.classList.add('ready'); var p = v.play(); if (p && p.catch) p.catch(function(){}); }, { once: true });
+      v.preload = 'auto'; v.appendChild(src); v.load();
+      var show = function () { v.classList.add('ready'); };
+      v.addEventListener('playing', show, { once: true });
+      v.addEventListener('canplay', function () { var p = v.play(); if (p && p.catch) p.catch(function(){}); }, { once: true });
+      var p0 = v.play(); if (p0 && p0.catch) p0.catch(function(){});
     }
   })();
   (function () {
