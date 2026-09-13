@@ -343,7 +343,13 @@
   .mini .m{background:#fff;border-radius:var(--r-card);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--line)}
   @media (min-width:900px){.mini .m{padding:22px}}
   .mini .f{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:34px;line-height:1;color:var(--navy)}
-  .mini .k{font-size:13px;color:var(--muted);text-align:right}
+  .mini .k{font-size:13px;color:var(--muted);text-align:right;margin-left:auto}
+  .mini a.m{transition:border-color .2s,transform .2s}
+  .mini a.m:hover,.mini a.m:focus-visible{border-color:var(--red);transform:translateY(-1px)}
+  .mini .go{width:32px;height:32px;border-radius:50%;background:var(--off);color:var(--navy);display:grid;place-items:center;font-size:18px;flex:none;transition:background-color .2s,color .2s}
+  .mini a.m:hover .go{background:var(--red);color:#fff}
+  .m-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--navy);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding:4px 2px}
+  .m-cta:hover{color:var(--red)}
 
   /* contact */
   .contact{display:grid;grid-template-columns:1fr;gap:32px;margin-top:clamp(36px,4vw,56px)}
@@ -375,6 +381,10 @@
   footer{padding:40px 0;border-top:1px solid var(--line)}
   .foot{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
   .foot .mark{height:40px}
+  .fblock{display:flex;flex-direction:column;gap:12px}
+  .faddr{font-style:normal;font-size:14px;color:var(--muted);line-height:1.6}
+  .faddr a{color:var(--navy);font-weight:600}
+  .faddr a:hover{color:var(--red)}
   .foot ul{display:flex;flex-wrap:wrap;gap:8px 20px}
   .foot a{font-size:14px;font-weight:500;color:var(--muted)}
   .foot a:hover{color:var(--navy)}
@@ -605,9 +615,10 @@
           <a class="btn btn-white" href="https://learning.ussoccer.com/coach/courses/available"><span>Register</span><span class="arr" aria-hidden="true">&rsaquo;</span></a>
         </div>
         <div class="mini">
-          <div class="m"><span class="f">7v7</span><span class="k">Grassroots<br>on request</span></div>
-          <div class="m"><span class="f">9v9</span><span class="k">Grassroots<br>on request</span></div>
-          <div class="m"><span class="f">11v11</span><span class="k">Grassroots<br>on request</span></div>
+          <a class="m" href="#contact" data-topic="Coach education / licensing course" data-format="7v7 Grassroots"><span class="f">7v7</span><span class="k">Grassroots<br>on request</span><span class="go" aria-hidden="true">&rsaquo;</span></a>
+          <a class="m" href="#contact" data-topic="Coach education / licensing course" data-format="9v9 Grassroots"><span class="f">9v9</span><span class="k">Grassroots<br>on request</span><span class="go" aria-hidden="true">&rsaquo;</span></a>
+          <a class="m" href="#contact" data-topic="Coach education / licensing course" data-format="11v11 Grassroots"><span class="f">11v11</span><span class="k">Grassroots<br>on request</span><span class="go" aria-hidden="true">&rsaquo;</span></a>
+          <a class="m-cta" href="#contact" data-topic="Coach education / licensing course" data-format="Grassroots">Request a grassroots course for your club <span aria-hidden="true">&nearr;</span></a>
         </div>
       </div>
     </div>
@@ -652,7 +663,10 @@
 
 <footer>
   <div class="wrap foot">
-    <a class="mark" href="#top" aria-label="Gabe Ramos"><svg class="sig" aria-hidden="true" focusable="false"><use href="#sig"/></svg></a>
+    <div class="fblock">
+      <a class="mark" href="#top" aria-label="Gabe Ramos"><svg class="sig" aria-hidden="true" focusable="false"><use href="#sig"/></svg></a>
+      <address class="faddr">Serving Nassau &amp; Suffolk County, NY<br><a class="mail" href="#contact" data-u="gramos" data-d="royalsportinggroup.com">gramos<span aria-hidden="true">&#64;</span>royalsportinggroup.com</a></address>
+    </div>
     <ul><li><a href="#who">Profile</a></li><li><a href="#honors">Honors</a></li><li><a href="#experience">Experience</a></li><li><a href="#courses">Courses</a></li><li><a href="#contact">Contact</a></li><li><a href="https://www.linkedin.com/in/gaberamosmgmt/">LinkedIn</a></li></ul>
     <small>&copy; 2026 Gabe Ramos Soccer &middot; Long Island, NY</small>
   </div>
@@ -686,8 +700,14 @@
     });
   })();
   (function () {
-    var m = document.getElementById('mail');
-    if (m) m.href = 'mailto:' + m.dataset.u + '@' + m.dataset.d;
+    document.querySelectorAll('a.mail[data-u]').forEach(function (m) { m.href = 'mailto:' + m.dataset.u + '@' + m.dataset.d; });
+    document.querySelectorAll('a[data-topic]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var topic = document.getElementById('topic'), msg = document.getElementById('msg');
+        if (topic) topic.value = a.dataset.topic;
+        if (msg && !msg.value.trim() && a.dataset.format) msg.value = 'I\u2019d like to request a ' + a.dataset.format + ' course for our club. ';
+      });
+    });
   })();
   document.getElementById('inquiry').addEventListener('submit', async function (e) {
     e.preventDefault();
