@@ -104,6 +104,10 @@
 
   /* dark editorial */
   .dark{background:var(--obsidian);color:var(--paper)}
+  .dark.has-band{padding-top:0}
+  .band{margin:0}
+  .band img{width:100%;height:auto;max-height:72vh;object-fit:cover;object-position:center 58%}
+  .band-cap{display:block;padding:12px 0 clamp(40px,5vw,64px);font-size:12px;line-height:1.5;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:clamp(40px,5vw,64px)}
   .dark .cap{color:rgba(255,255,255,.6)}
   .dark .head p{color:rgba(255,255,255,.7)}
   .honors{display:grid;grid-template-columns:1fr;gap:36px}
@@ -289,8 +293,10 @@
     </div>
   </section>
 
-  <section class="dark" id="honors">
+  <section class="dark has-band" id="honors">
+    <figure class="band"><img src="img/sacred-heart.jpg" alt="Gabe Ramos addressing the Sacred Heart Academy Spartans in a pre-match huddle" loading="lazy"></figure>
     <div class="wrap">
+      <span class="band-cap">Sacred Heart Academy Spartans &mdash; Hempstead, NY</span>
       <div class="head">
         <span class="cap">Honors &amp; awards</span>
         <div>
