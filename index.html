@@ -146,6 +146,8 @@
   .offsec{background:var(--off)}
   .center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
   .center h2{max-width:22ch}
+  .center h2.who-h{max-width:30ch;font-size:clamp(30px,4.4vw,58px)}
+  @media (max-width:640px){.who-h br{display:none}}
   .split{display:grid;grid-template-columns:1fr;gap:24px 48px;align-items:end;margin-bottom:clamp(36px,4vw,56px)}
   @media (min-width:900px){.split{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
   .split .side{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
@@ -349,7 +351,7 @@
     <div class="wrap">
       <div class="center">
         <span class="eyebrow"><span class="tog" aria-hidden="true"></span>Who is Gabe</span>
-        <h2 class="d">A coach educator, or a <em>person</em> who builds <span class="red">leaders</span></h2>
+        <h2 class="d who-h">Coach. Teacher. Mentor. Husband. Father. Long&nbsp;Islander.<br>Above all, <em>someone</em> who <span class="red">builds leaders</span>.</h2>
       </div>
       <div class="who-grid">
         <div class="tile"><span class="ic"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" aria-hidden="true"><circle cx="9" cy="14.5" r="5.5"/><path d="M13.6 11.4 21 8.4v3.8l-6.4 2.2"/><path d="M9 9V6.5"/><circle cx="9" cy="14.5" r="1.2" fill="currentColor" stroke="none"/></svg></span><span class="big">2007</span><span class="lbl">Coaching and educating on Long Island since</span></div>
