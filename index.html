@@ -89,6 +89,7 @@
   @media (min-width:900px){.hero-shell{padding:16px}}
   .hero{position:relative;background:var(--navy-deep);color:#fff;border-radius:var(--r-hero);overflow:hidden;isolation:isolate}
   .hero-img{position:absolute;inset:0;z-index:0}
+  .hero-img picture{position:absolute;inset:0;z-index:0}
   .hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;z-index:0}
   .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 40%;z-index:0;display:none;transform:scaleX(-1)}
   .hero-video.ready{display:block}
@@ -102,7 +103,7 @@
     .hero-body{min-height:0;padding-top:clamp(88px,20vh,180px);gap:22px}
     .hero-copy{gap:16px}
     .hero-copy .pill-outline{font-size:12px;padding:6px 12px;letter-spacing:0}
-    .hero-img img{object-position:72% 22%}
+    .hero-img img{object-position:34% 50%}
     .hero-img::before{background:linear-gradient(0deg,var(--navy-deep) 0%,var(--navy-deep) 46%,rgba(20,26,46,.55) 75%,rgba(20,26,46,.25) 100%)}
   }
 
@@ -296,7 +297,10 @@
 <div class="hero-shell">
   <div class="hero" id="top">
     <div class="hero-img">
-      <img src="img/hero.jpg" alt="Gabe Ramos in a pre-match huddle with the Manhasset varsity team" width="1800" height="1778" fetchpriority="high" decoding="async">
+      <picture>
+        <source media="(max-width:899px)" srcset="img/coaching.jpg" width="1600" height="893">
+        <img src="img/hero.jpg" alt="Gabe Ramos coaching youth players on the pitch" width="1800" height="1778" fetchpriority="high" decoding="async">
+      </picture>
       <video class="hero-video" muted loop playsinline autoplay preload="metadata" poster="img/hero-poster.jpg" data-src="img/hero.mp4" aria-hidden="true" tabindex="-1"></video>
     </div>
 
