@@ -210,10 +210,19 @@
   @media (max-width:640px){.nav .btn-white{display:none}.nav{padding-block:16px}.mark{height:36px}}
   .menu-btn{display:inline-flex}
   @media (min-width:900px){.menu-btn{display:none}}
-  .mobile-nav{display:none;position:relative;z-index:2;padding:0 clamp(20px,3.4vw,44px) 12px}
-  .hero.open .mobile-nav{display:block}
-  .mobile-nav a{display:block;padding:14px 0;border-bottom:1px solid var(--line-dark);font-size:18px;font-weight:500}
-  @media (min-width:900px){.hero.open .mobile-nav{display:none}}
+  .mobile-nav{display:none;position:fixed;inset:0;z-index:100;background:var(--navy-deep);color:#fff;flex-direction:column;padding:16px clamp(20px,5vw,32px) 28px;overflow:auto;-webkit-overflow-scrolling:touch}
+  body.menu-open .mobile-nav{display:flex}
+  body.menu-open{overflow:hidden}
+  .mn-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+  .mn-top .mark{grid-column:2;height:40px;color:var(--red)}
+  .mn-top .menu-close{grid-column:3;justify-self:end}
+  .mn-links{display:flex;flex-direction:column;align-items:center;gap:4px;margin:auto 0;padding:36px 0 28px}
+  .mn-links a{display:block;font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:clamp(34px,9vw,46px);line-height:1.15;color:#fff;padding:6px 14px;border:0}
+  .mn-links a:hover,.mn-links a:focus-visible{color:var(--red)}
+  .mobile-nav .btn{align-self:center}
+  .mn-foot{text-align:center;font-size:13px;color:rgba(255,255,255,.6);margin-top:26px;line-height:1.7}
+  .mn-foot a{color:#fff;font-weight:600}
+  @media (min-width:900px){.mobile-nav{display:none!important}}
 
   .hero-body{position:relative;z-index:1;padding:clamp(40px,6vw,96px) clamp(20px,3.4vw,44px) clamp(36px,4.5vw,64px);display:grid;grid-template-columns:1fr;gap:28px;min-height:min(78vh,760px);align-content:end}
   @media (min-width:900px){.hero-body{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:end}}
@@ -422,7 +431,15 @@
       </div>
     </header>
     <nav class="mobile-nav" id="mnav" aria-label="Primary mobile">
-      <a href="#who">Profile</a><a href="#honors">Honors</a><a href="#experience">Experience</a><a href="#courses">Courses</a><a href="#contact">Contact</a>
+      <div class="mn-top">
+        <a class="mark" href="#top" aria-label="Gabe Ramos"><svg class="sig" aria-hidden="true" focusable="false"><use href="#sig"/></svg></a>
+        <button class="pill pill-dark menu-close" type="button" aria-label="Close menu">Close</button>
+      </div>
+      <div class="mn-links">
+        <a href="#who">Profile</a><a href="#honors">Honors</a><a href="#experience">Experience</a><a href="#courses">Courses</a><a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-red" href="#contact"><span>Get in touch</span><span class="arr" aria-hidden="true">&rsaquo;</span></a>
+      <p class="mn-foot">Serving Nassau &amp; Suffolk County, NY<br><a class="mail" href="#contact" data-u="gramos" data-d="royalsportinggroup.com">gramos<span aria-hidden="true">&#64;</span>royalsportinggroup.com</a></p>
     </nav>
 
     <div class="hero-body">
@@ -694,14 +711,19 @@
     }
   })();
   (function () {
-    var hero = document.querySelector('.hero'), btn = document.querySelector('.menu-btn');
-    btn.addEventListener('click', function () {
-      var open = hero.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open)); btn.textContent = open ? 'Close' : 'Menu';
-    });
-    document.querySelectorAll('.mobile-nav a').forEach(function (a) {
-      a.addEventListener('click', function () { hero.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.textContent='Menu'; });
-    });
+    var btn = document.querySelector('.menu-btn'), nav = document.getElementById('mnav');
+    if (!btn || !nav) return;
+    var closeBtn = nav.querySelector('.menu-close');
+    var set = function (open) {
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      (open ? closeBtn : btn).focus();
+    };
+    btn.addEventListener('click', function () { set(true); });
+    closeBtn.addEventListener('click', function () { set(false); });
+    nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) set(false); });
+    matchMedia('(min-width:900px)').addEventListener('change', function (m) { if (m.matches) set(false); });
   })();
   (function () {
     document.querySelectorAll('a.mail[data-u]').forEach(function (m) { m.href = 'mailto:' + m.dataset.u + '@' + m.dataset.d; });
