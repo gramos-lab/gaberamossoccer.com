@@ -1,3 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<link rel="canonical" href="https://gaberamossoccer.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-weight='500' font-size='28' fill='%23fff'%3EGR%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gabe Ramos Soccer">
+<meta property="og:description" content="U.S. Soccer coach educator, Co-Founder &amp; COO of Royal Sporting Group, and three-time 2023 Coach of the Year. Long Island, NY.">
+<meta property="og:url" content="https://gaberamossoccer.com/">
+<meta property="og:image" content="https://gaberamossoccer.com/img/team.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <title>Gabe Ramos Soccer</title>
 <meta name="description" content="Gabe Ramos — U.S. Soccer coach educator, Co-Founder & COO of Royal Sporting Group, and three-time 2023 Coach of the Year. Club technical services, coach licensing, and player mentorship on Long Island, NY.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +68,6 @@
   nav ul{display:flex;gap:24px;align-items:center}
   nav a{font-size:16px;font-weight:500;color:var(--obsidian);padding-block:4px;border-bottom:1.5px solid transparent;transition:border-color .18s}
   nav a:hover,nav a:focus-visible{border-bottom-color:var(--obsidian)}
-  @media (max-width:900px){nav{display:none}}
 
   /* hero — full-bleed editorial */
   .hero{position:relative;background:var(--obsidian);color:var(--paper);min-height:min(82vh,860px);display:flex;align-items:flex-end;overflow:hidden}
@@ -134,8 +147,7 @@
   .row .org{color:var(--steel);font-size:14px}
   .row .when{font-size:14px;color:var(--steel);white-space:nowrap;font-variant-numeric:tabular-nums}
   .row .detail{grid-column:1/-1;color:var(--steel);font-size:14px;line-height:1.75;max-width:62ch;margin-top:4px}
-  .row.now .role::after{content:"Current";display:inline-block;font-size:12px;line-height:1.5;font-weight:500;padding:1px 10px;border-radius:30px;background:var(--mist);color:var(--obsidian);margin-left:12px;vertical-align:middle}
-  .sub{grid-column:1/-1;margin-top:12px;padding-left:16px;border-left:1px solid var(--concrete);display:flex;flex-direction:column;gap:6px}
+    .sub{grid-column:1/-1;margin-top:12px;padding-left:16px;border-left:1px solid var(--concrete);display:flex;flex-direction:column;gap:6px}
   .sub li{display:grid;grid-template-columns:1fr;gap:2px;font-size:14px}
   @media (min-width:600px){.sub li{grid-template-columns:minmax(0,1fr) minmax(0,13ch);column-gap:24px}.sub .when{text-align:right}}
   .sub .role{font-weight:500;color:var(--obsidian);font-size:14px}
@@ -190,7 +202,7 @@
   @media (min-width:640px){.two{display:grid;grid-template-columns:1fr 1fr;column-gap:36px}}
   label{font-size:12px;line-height:1.5;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
   input,select,textarea{font-family:var(--text);font-size:16px;line-height:1.5;color:var(--obsidian);border:0;border-bottom:1px solid transparent;background:transparent;padding:2px 0 6px;width:100%;border-radius:0}
-  input::placeholder,textarea::placeholder{color:var(--faint)}
+  input::placeholder,textarea::placeholder{color:var(--steel)}
   input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--obsidian)}
   textarea{resize:vertical;min-height:96px}
   select{appearance:none;cursor:pointer}
@@ -208,13 +220,45 @@
   .foot .legal{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:36px;border-top:1px solid var(--concrete);font-size:12px;color:var(--steel)}
 
   :focus-visible{outline:2px solid var(--obsidian);outline-offset:3px}
+  /* skip link */
+  .skip{position:absolute;left:16px;top:-48px;z-index:50;background:var(--obsidian);color:var(--paper);padding:10px 16px;border-radius:30px;font-weight:500;transition:top .2s}
+  .skip:focus{top:12px}
+
+  /* interaction states */
+  a,button{transition:color .2s,border-color .2s,background-color .2s,opacity .2s}
+  .pill:active{transform:scale(.98)}
+  .hero :focus-visible,.dark :focus-visible{outline-color:var(--paper)}
+
+  /* select affordance */
+  select{padding-right:28px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23707072' stroke-width='1.5'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center}
+  input:user-invalid,textarea:user-invalid{border-bottom-color:#B42318}
+
+  /* current-role pill */
+  .now-pill{display:inline-block;font-size:12px;line-height:1.5;font-weight:500;padding:1px 10px;border-radius:30px;background:var(--mist);color:var(--obsidian);margin-left:12px;vertical-align:middle}
+
+  /* mobile menu */
+  .hdr-actions{display:flex;align-items:center;gap:8px}
+  .menu-btn{display:none;background:transparent;color:var(--obsidian);border:1px solid var(--concrete);padding:6px 14px;font-size:14px}
+  @media (max-width:900px){
+    header .wrap{flex-wrap:wrap;row-gap:0}
+    .hdr-actions{margin-left:auto}
+    .menu-btn{display:inline-flex}
+    nav{display:none;width:100%;order:3;border-top:1px solid var(--concrete);margin-top:16px;padding-block:8px}
+    header.open nav{display:block}
+    nav ul{flex-direction:column;gap:0;align-items:stretch}
+    nav a{display:block;padding:14px 0;border-bottom:1px solid var(--concrete);font-size:18px}
+    nav li:last-child a{border-bottom:0}
+  }
+
   @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
-
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
 <header>
   <div class="wrap">
     <a class="mark" href="#top">GABE RAMOS</a>
-    <nav>
+    <nav id="site-nav" aria-label="Primary">
       <ul>
         <li><a href="#profile">Profile</a></li>
         <li><a href="#honors">Honors</a></li>
@@ -223,14 +267,17 @@
         <li><a href="#courses">Courses</a></li>
       </ul>
     </nav>
-    <a class="pill pill-sm" href="#contact">Schedule a call</a>
+    <div class="hdr-actions">
+      <a class="pill pill-sm" href="#contact">Schedule a call</a>
+      <button class="pill pill-sm menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
   </div>
 </header>
 
 <main id="top">
 
   <div class="hero">
-    <img src="img/team.jpg" alt="Gabe Ramos in a pre-match huddle with the Manhasset varsity team" fetchpriority="high">
+    <img src="img/team.jpg" alt="Gabe Ramos in a pre-match huddle with the Manhasset varsity team" width="1800" height="1200" fetchpriority="high" decoding="async">
     <div class="wrap">
       <span class="cap">Long Island, New York &middot; U.S. Soccer Coach Educator</span>
       <h1>Empowering leaders. Evolving the game.</h1>
@@ -294,7 +341,7 @@
   </section>
 
   <section class="dark has-band" id="honors">
-    <figure class="band"><img src="img/sacred-heart.jpg" alt="Gabe Ramos addressing the Sacred Heart Academy Spartans in a pre-match huddle" loading="lazy"></figure>
+    <figure class="band"><img src="img/sacred-heart.jpg" alt="Gabe Ramos addressing the Sacred Heart Academy Spartans in a pre-match huddle" width="1800" height="1200" loading="lazy" decoding="async"></figure>
     <div class="wrap">
       <span class="band-cap">Sacred Heart Academy Spartans &mdash; Hempstead, NY</span>
       <div class="head">
@@ -337,7 +384,7 @@
           <span class="cap cap-ink">Appointments</span>
 
           <div class="row now">
-            <div><div class="role">Co-Founder &amp; Chief Operating Officer</div><div class="org">Royal Sporting Group &mdash; New York</div></div>
+            <div><div class="role">Co-Founder &amp; Chief Operating Officer<span class="now-pill">Current</span></div><div class="org">Royal Sporting Group &mdash; New York</div></div>
             <div class="when">2018 &ndash; Present</div>
             <p class="detail">Oversees training programs across multiple community soccer clubs; builds
             sustainable player pathways, raises coaching standards, and supplies clubs with the
@@ -345,14 +392,14 @@
           </div>
 
           <div class="row now">
-            <div><div class="role">Head Varsity Soccer Coach</div><div class="org">Manhasset High School &mdash; Manhasset, NY</div></div>
+            <div><div class="role">Head Varsity Soccer Coach<span class="now-pill">Current</span></div><div class="org">Manhasset High School &mdash; Manhasset, NY</div></div>
             <div class="when">2025 &ndash; Present</div>
             <p class="detail">First season, Fall 2025: <strong>10&ndash;3&ndash;1</strong>, 46 goals for and 13 against.
             Reached the Nassau County quarterfinals, falling to Long Beach.</p>
           </div>
 
           <div class="row now">
-            <div><div class="role">Coaching Education Instructor</div><div class="org">U.S. Soccer Federation &mdash; Licensing pathway</div></div>
+            <div><div class="role">Coaching Education Instructor<span class="now-pill">Current</span></div><div class="org">U.S. Soccer Federation &mdash; Licensing pathway</div></div>
             <div class="when">2024 &ndash; Present</div>
             <p class="detail">Delivers official U.S. Soccer licensing courses and ongoing on-field mentorship
             for coaches from first-time parent volunteers to club directors.</p>
@@ -541,6 +588,18 @@
 </footer>
 
 <script>
+  (function () {
+    var hdr = document.querySelector('header'), btn = document.querySelector('.menu-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var open = hdr.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Close' : 'Menu';
+    });
+    hdr.querySelectorAll('nav a').forEach(function (a) {
+      a.addEventListener('click', function () { hdr.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.textContent='Menu'; });
+    });
+  })();
   document.getElementById('inquiry').addEventListener('submit', function (e) {
     e.preventDefault();
     var f = e.target;
@@ -552,3 +611,5 @@
       encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 </script>
+</body>
+</html>
