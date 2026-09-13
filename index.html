@@ -72,7 +72,7 @@
   .btn-white{background:#fff;color:var(--navy)}.btn-white .arr{background:var(--red);color:#fff}
   .link{font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
   .link:hover{color:var(--red)}
-  .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;white-space:nowrap}
   .pill-outline{border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85)}
   .pill-red{background:var(--red);color:#fff}
   .pill-soft{background:var(--off);color:var(--navy)}
@@ -97,7 +97,10 @@
       linear-gradient(0deg,var(--navy-deep) 0%,rgba(20,26,46,0) 38%)}
   .hero-img::after{content:"";position:absolute;left:-10%;bottom:-30%;width:60%;height:80%;background:radial-gradient(closest-side,rgba(187,37,51,.45),rgba(187,37,51,0));filter:blur(30px);pointer-events:none}
   @media (max-width:899px){
-    .hero-img img{object-position:62% 30%}
+    .hero-body{min-height:0;padding-top:clamp(120px,32vh,260px);gap:22px}
+    .hero-copy{gap:16px}
+    .hero-copy .pill-outline{font-size:12px;padding:6px 12px;letter-spacing:0}
+    .hero-img img{object-position:72% 22%}
     .hero-img::before{background:linear-gradient(0deg,var(--navy-deep) 0%,var(--navy-deep) 46%,rgba(20,26,46,.55) 75%,rgba(20,26,46,.25) 100%)}
   }
 
@@ -110,7 +113,8 @@
     .nav-links a{padding:8px 16px;border-radius:999px;font-size:14px;font-weight:500;color:rgba(255,255,255,.8);transition:background-color .2s,color .2s}
     .nav-links a:hover,.nav-links a:focus-visible{background:#fff;color:var(--navy)}
   }
-  .nav-actions{display:flex;align-items:center;gap:8px}
+  .nav-actions{display:flex;align-items:center;gap:8px;flex:none}
+  @media (max-width:640px){.nav .btn-white{display:none}.nav{padding-block:16px}.mark{font-size:30px}}
   .menu-btn{display:inline-flex}
   @media (min-width:900px){.menu-btn{display:none}}
   .mobile-nav{display:none;position:relative;z-index:2;padding:0 clamp(20px,3.4vw,44px) 12px}
@@ -143,10 +147,12 @@
   .split .side{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
 
   /* who */
-  .who-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:clamp(40px,5vw,64px)}
-  @media (min-width:760px){.who-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .who-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:clamp(40px,5vw,64px)}
+  @media (min-width:480px){.who-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+  @media (min-width:760px){.who-grid{gap:20px}}
   @media (min-width:1100px){.who-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-  .tile{background:var(--off);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:14px;min-height:190px}
+  .tile{background:var(--off);border-radius:var(--r-card);padding:22px;display:flex;flex-direction:column;gap:12px;min-height:150px}
+  @media (min-width:760px){.tile{padding:24px;gap:14px;min-height:190px}}
   .tile .ic{width:44px;height:44px;border-radius:14px;background:#fff;display:grid;place-items:center}
   .tile .ic i{width:14px;height:14px;border-radius:50%;background:var(--red);display:block}
   .tile .big{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:44px;line-height:1;margin-top:auto;font-variant-numeric:tabular-nums}
@@ -172,7 +178,7 @@
   .card-photo{padding:0;overflow:hidden;position:relative;min-height:300px;border:0}
   @media (min-width:1000px){.card-photo{grid-column:span 2}}
   .card-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-  .card-photo .over{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;background:linear-gradient(0deg,rgba(20,26,46,.92),rgba(20,26,46,0));display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+  .card-photo .over{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;background:linear-gradient(0deg,rgba(20,26,46,.92),rgba(20,26,46,0));display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
   .card-photo .over strong{font-family:var(--display);font-weight:800;font-stretch:85%;text-transform:uppercase;font-size:22px;line-height:1;display:block}
   .card-photo .over span{font-size:13px;color:rgba(255,255,255,.7)}
 
@@ -231,12 +237,14 @@
   .event>*{position:relative;z-index:2}
   .event .bg{z-index:0}
   .event h3{font-family:var(--display);font-weight:800;font-stretch:85%;text-transform:uppercase;font-size:clamp(34px,4.6vw,56px);line-height:.95}
-  .event dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px}
+  .event dl{display:grid;grid-template-columns:1fr;gap:12px 20px}
+  @media (min-width:480px){.event dl{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px}}
   .event dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
   .event dd{font-weight:600;margin-top:2px}
   .event .btn{align-self:flex-start;margin-top:6px}
   .mini{display:grid;grid-template-columns:1fr;gap:16px}
-  .mini .m{background:#fff;border-radius:var(--r-card);padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--line)}
+  .mini .m{background:#fff;border-radius:var(--r-card);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--line)}
+  @media (min-width:900px){.mini .m{padding:22px}}
   .mini .f{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:34px;line-height:1;color:var(--navy)}
   .mini .k{font-size:13px;color:var(--muted);text-align:right}
 
@@ -338,7 +346,7 @@
         <div class="tile"><span class="ic"><i></i></span><span class="big">M.Ed.</span><span class="lbl">Molloy University, Master of Education</span></div>
       </div>
       <div class="bio">
-        <div class="portrait"><img src="img/portrait.jpg" alt="Portrait of Gabe Ramos" width="928" height="1152" loading="lazy" decoding="async"></div>
+        <div class="portrait"><img src="img/portrait-2.jpg" alt="Portrait of Gabe Ramos" width="928" height="1152" loading="lazy" decoding="async"></div>
         <div class="bio-text">
           <p class="lead">Gabe Ramos is a licensed U.S. Soccer coach, coach educator, and player development specialist dedicated to empowering athletes, coaches, and communities through thoughtful, intentional mentorship.</p>
           <p>With nearly two decades in youth development, club consulting, and coach education, Gabe blends technical expertise, strategic planning, and leadership principles to help players reach their highest potential both on and off the field.</p>
