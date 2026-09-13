@@ -511,6 +511,10 @@
       v.addEventListener('playing', show, { once: true });
       v.addEventListener('canplay', function () { var p = v.play(); if (p && p.catch) p.catch(function(){}); }, { once: true });
       var p0 = v.play(); if (p0 && p0.catch) p0.catch(function(){});
+      // Resume if the browser paused us while the tab was hidden or throttled.
+      var resume = function () { if (!document.hidden && v.paused && v.readyState >= 2) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } };
+      document.addEventListener('visibilitychange', resume);
+      v.addEventListener('pause', function () { setTimeout(resume, 400); });
     }
   })();
   (function () {
