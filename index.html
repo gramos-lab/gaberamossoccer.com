@@ -1,240 +1,220 @@
 <title>Gabe Ramos Soccer</title>
+<meta name="description" content="Gabe Ramos — U.S. Soccer coach educator, Co-Founder & COO of Royal Sporting Group, and three-time 2023 Coach of the Year. Club technical services, coach licensing, and player mentorship on Long Island, NY.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Jost:wght@500&display=swap">
 <style>
   :root{
-    --paper:#FFFFFF;
-    --shade:#F2F6F3;
-    --ink:#0B0B0C;
-    --muted:#69706B;
-    --rule:#E0E5E1;
-    --accent:#007A55;
-    --accent-lite:#22C58C;
-    --grotesk:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-    --pad:clamp(20px,5vw,88px);
-    --gap:clamp(24px,3.2vw,48px);
+    --obsidian:#111111;
+    --paper:#ffffff;
+    --concrete:#e5e5e5;
+    --mist:#f5f5f5;
+    --steel:#707072;
+    --faint:#9e9ea0;
+    --text:"Inter","Helvetica Now Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --display:"Jost","Futura PT","Futura","Helvetica Neue",Arial,sans-serif;
+    --pad:clamp(20px,4vw,64px);
+    --max:1440px;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{
-    margin:0;background:var(--paper);color:var(--ink);
-    font-family:var(--grotesk);font-size:17px;line-height:1.62;
+    margin:0;background:var(--paper);color:var(--obsidian);
+    font-family:var(--text);font-size:16px;line-height:1.75;font-weight:400;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:inherit}
-  h1,h2,h3,h4{margin:0;text-wrap:balance;font-weight:800}
-  p{margin:0}
-  ul{margin:0;padding:0;list-style:none}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4,p,ul,ol,dl,dd,figure{margin:0}
+  ul,ol{padding:0;list-style:none}
+  img{display:block;max-width:100%}
+  strong{font-weight:500}
 
-  .wrap{max-width:1480px;margin:0 auto;padding-inline:var(--pad)}
-  .rule{border:0;border-top:1px solid var(--rule);margin:0}
-  .lab{font-family:var(--mono);font-size:.685rem;font-weight:500;
-    letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
-  .lab-ink{color:var(--ink)}
-  .acc{color:var(--accent)}
-  .tbd{border-bottom:1.5px dashed rgba(0,122,85,.5);padding-bottom:1px}
+  .wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad)}
+  .cap{font-size:12px;line-height:1.5;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+  .cap-ink{color:var(--obsidian)}
+  .rule{border:0;border-top:1px solid var(--concrete);margin:0}
 
-  .note{background:var(--ink);color:#fff;font-family:var(--mono);font-size:.7rem;
-    letter-spacing:.09em;text-transform:uppercase}
-  .note .wrap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;padding-block:11px}
-  .note b{color:var(--accent-lite);font-weight:500}
-  .note span{color:rgba(255,255,255,.62);letter-spacing:.05em;text-transform:none;font-size:.74rem}
+  /* pills — the one button geometry */
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--text);font-size:16px;line-height:1.5;font-weight:500;
+    padding:10px 22px;border-radius:30px;border:0;cursor:pointer;
+    background:var(--obsidian);color:var(--paper);
+    transition:opacity .18s;white-space:nowrap;
+  }
+  .pill:hover,.pill:focus-visible{opacity:.78}
+  .pill-light{background:var(--paper);color:var(--obsidian)}
+  .pill-sm{font-size:14px;padding:6px 14px}
+  .tag{display:inline-block;font-size:14px;line-height:1.5;font-weight:500;padding:6px 14px;border-radius:30px;background:var(--mist);color:var(--obsidian)}
 
-  header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:20px}
-  .mark{font-weight:800;font-size:1.06rem;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
-  .mark em{font-style:normal;color:var(--accent)}
-  nav ul{display:flex;gap:clamp(14px,2.2vw,32px);align-items:center}
-  nav a{font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
-    text-decoration:none;color:var(--muted);padding-block:4px;
-    border-bottom:1.5px solid transparent;transition:color .18s,border-color .18s}
-  nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--accent)}
-  .nav-cta{font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
-    text-decoration:none;background:var(--ink);color:#fff;padding:11px 20px;transition:background .18s}
-  .nav-cta:hover,.nav-cta:focus-visible{background:var(--accent)}
-  @media (max-width:960px){nav{display:none}}
+  /* nav */
+  header{background:var(--paper)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:18px}
+  .mark{font-weight:500;font-size:16px;letter-spacing:.02em;white-space:nowrap}
+  nav ul{display:flex;gap:24px;align-items:center}
+  nav a{font-size:16px;font-weight:500;color:var(--obsidian);padding-block:4px;border-bottom:1.5px solid transparent;transition:border-color .18s}
+  nav a:hover,nav a:focus-visible{border-bottom-color:var(--obsidian)}
+  @media (max-width:900px){nav{display:none}}
 
-  /* hero */
-  .hero .wrap{padding-top:clamp(56px,9vw,120px);padding-bottom:clamp(40px,5vw,64px)}
-  .eyebrow{display:flex;gap:12px;align-items:center;margin-bottom:clamp(28px,4vw,48px)}
-  .eyebrow .dot{width:9px;height:9px;background:var(--accent);flex:none}
-  h1{font-size:clamp(3rem,10.2vw,9rem);line-height:.87;letter-spacing:-.045em;max-width:15ch}
-  h1 .lite{font-weight:400;color:var(--muted);letter-spacing:-.035em}
-  .hero-foot{display:grid;grid-template-columns:1fr;gap:var(--gap);margin-top:clamp(36px,5vw,64px)}
-  @media (min-width:900px){.hero-foot{grid-template-columns:minmax(0,1fr) minmax(0,30ch)}}
-  .lede{font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.5;max-width:44ch}
-  .hero-roles{display:flex;flex-direction:column;gap:12px}
-  .hero-roles li{display:flex;gap:12px;font-size:.95rem;line-height:1.4}
-  .hero-roles .n{font-family:var(--mono);font-size:.7rem;color:var(--accent);padding-top:3px}
+  /* hero — full-bleed editorial */
+  .hero{position:relative;background:var(--obsidian);color:var(--paper);min-height:min(82vh,860px);display:flex;align-items:flex-end;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(17,17,17,.88) 0%,rgba(17,17,17,.45) 42%,rgba(17,17,17,.05) 75%)}
+  .hero .wrap{position:relative;z-index:1;width:100%;padding-top:clamp(120px,24vh,260px);padding-bottom:clamp(36px,5vw,64px)}
+  .hero .cap{color:rgba(255,255,255,.72);margin-bottom:20px}
+  h1{
+    font-family:var(--display);font-weight:500;text-transform:uppercase;
+    font-size:clamp(40px,6.4vw,76px);line-height:1;letter-spacing:.005em;
+    max-width:14ch;text-wrap:balance;
+  }
+  .hero p{font-size:16px;line-height:1.75;max-width:52ch;margin-top:20px;color:rgba(255,255,255,.9)}
+  .hero-cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:28px}
+  .hero-cta a.ghost{color:var(--paper);font-weight:500;font-size:16px;border-bottom:1.5px solid rgba(255,255,255,.5);padding-bottom:2px}
+  .hero-cta a.ghost:hover{border-bottom-color:var(--paper)}
+  .hero-caption{position:absolute;right:var(--pad);bottom:20px;z-index:1;font-size:12px;line-height:1.5;color:rgba(255,255,255,.55);text-align:right}
+  @media (max-width:700px){.hero-caption{display:none}}
 
   /* credential strip */
-  .creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-bottom:1px solid var(--concrete)}
   @media (min-width:760px){.creds{grid-template-columns:repeat(4,minmax(0,1fr))}}
-  .cred{padding:clamp(24px,3vw,38px) 0;border-top:1px solid var(--rule)}
-  .cred:not(:last-child){border-right:1px solid var(--rule)}
-  .cred>*{padding-inline:clamp(14px,2vw,28px)}
-  .cred:first-child>*{padding-left:0}
-  .cred .fig{font-size:clamp(2.1rem,3.6vw,3.1rem);font-weight:800;letter-spacing:-.04em;line-height:1;display:block}
-  .cred .cap{display:block;margin-top:12px;font-size:.83rem;color:var(--muted);line-height:1.35}
-  @media (max-width:759px){.cred:nth-child(2n){border-right:0}.cred:nth-child(odd)>*{padding-left:0}}
+  .cred{padding:36px 20px 36px 0}
+  .cred+.cred{padding-left:20px;border-left:1px solid var(--concrete)}
+  @media (max-width:759px){.cred:nth-child(3){padding-left:0;border-left:0}.cred:nth-child(-n+2){border-bottom:1px solid var(--concrete)}}
+  .cred .fig{font-family:var(--display);font-weight:500;font-size:clamp(36px,3.4vw,48px);line-height:1;display:block;font-variant-numeric:tabular-nums}
+  .cred .lbl{display:block;margin-top:12px;font-size:14px;line-height:1.5;color:var(--steel)}
 
-  section{padding-block:clamp(64px,8vw,132px)}
-  .head{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,40px);margin-bottom:clamp(40px,5vw,72px)}
+  /* sections */
+  section{padding-block:clamp(56px,7vw,96px)}
+  .head{display:grid;grid-template-columns:1fr;gap:16px 36px;margin-bottom:clamp(36px,4vw,56px)}
   @media (min-width:900px){.head{grid-template-columns:minmax(0,22ch) minmax(0,1fr);align-items:start}}
-  h2{font-size:clamp(2.1rem,5vw,4.1rem);line-height:.95;letter-spacing:-.04em;max-width:20ch}
-  .head p{max-width:56ch;color:var(--muted);font-size:1.05rem}
+  h2{font-size:clamp(24px,3vw,40px);line-height:1.2;font-weight:500;letter-spacing:-.01em;max-width:24ch;text-wrap:balance}
+  .head p{color:var(--steel);max-width:58ch;margin-top:12px}
+  h3{font-size:20px;line-height:1.5;font-weight:500}
 
   /* profile */
-  .profile{display:grid;grid-template-columns:1fr;gap:var(--gap)}
-  @media (min-width:900px){.profile{grid-template-columns:minmax(0,22ch) minmax(0,1.35fr) minmax(0,.85fr)}}
-  .portrait{aspect-ratio:4/5;background:var(--shade);border:1px solid var(--rule);
-    display:flex;align-items:flex-end;padding:18px}
-  .portrait .lab{line-height:1.5}
-  .bio{display:flex;flex-direction:column;gap:22px}
-  .bio p{font-size:clamp(1.02rem,1.35vw,1.2rem);line-height:1.6;max-width:56ch}
-  .bio .pull{font-size:clamp(1.3rem,2.1vw,1.75rem);font-weight:700;letter-spacing:-.03em;
-    line-height:1.28;border-left:3px solid var(--accent);padding-left:22px;max-width:34ch}
+  .profile{display:grid;grid-template-columns:1fr;gap:36px}
+  @media (min-width:900px){.profile{grid-template-columns:minmax(0,300px) minmax(0,1.3fr) minmax(0,.9fr)}}
+  .portrait{aspect-ratio:4/5;background:var(--mist);display:flex;align-items:flex-end;padding:16px}
+  .portrait img{width:100%;height:100%;object-fit:cover}
+  .bio{display:flex;flex-direction:column;gap:20px}
+  .bio p{max-width:58ch}
+  .bio .lead{font-size:20px;line-height:1.5;font-weight:500}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .side{display:flex;flex-direction:column;gap:16px}
 
-  /* honors — inverse */
-  .inverse{background:var(--ink);color:#fff}
-  .inverse h2{color:#fff}
-  .inverse .lab{color:rgba(255,255,255,.55)}
-  .inverse .head p{color:rgba(255,255,255,.62)}
-  .honors{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,56px)}
-  @media (min-width:940px){.honors{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr)}}
-  .bigyear{display:flex;flex-direction:column;gap:14px}
-  .bigyear .y{font-size:clamp(5rem,13vw,11rem);font-weight:800;letter-spacing:-.06em;
-    line-height:.8;color:var(--accent-lite);font-variant-numeric:tabular-nums}
-  .bigyear p{color:rgba(255,255,255,.68);max-width:26ch;font-size:1rem}
-  .honor-list li{display:grid;grid-template-columns:1fr;gap:4px;
-    padding-block:20px;border-top:1px solid rgba(255,255,255,.22)}
-  @media (min-width:640px){
-    .honor-list li{grid-template-columns:minmax(0,15ch) minmax(0,1fr);column-gap:28px;align-items:baseline}
-  }
-  .honor-list .kind{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
-    text-transform:uppercase;color:rgba(255,255,255,.5)}
-  .honor-list .nm{font-size:clamp(1.05rem,1.7vw,1.4rem);font-weight:700;letter-spacing:-.028em;line-height:1.25}
-  .honor-list .src{grid-column:1/-1;color:rgba(255,255,255,.55);font-size:.9rem}
-  @media (min-width:640px){.honor-list .src{grid-column:2/-1}}
-  .earlier{margin-top:clamp(36px,4vw,56px);border-top:1px solid rgba(255,255,255,.22);padding-top:24px}
-  .earlier .lab{display:block;margin-bottom:14px}
-  .earlier .nm{font-size:1.1rem;font-weight:700;letter-spacing:-.025em}
-  .earlier .src{color:rgba(255,255,255,.55);font-size:.9rem}
+  /* dark editorial */
+  .dark{background:var(--obsidian);color:var(--paper)}
+  .dark .cap{color:rgba(255,255,255,.6)}
+  .dark .head p{color:rgba(255,255,255,.7)}
+  .honors{display:grid;grid-template-columns:1fr;gap:36px}
+  @media (min-width:940px){.honors{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
+  .bigyear .y{font-family:var(--display);font-weight:500;font-size:76px;line-height:1;display:block;font-variant-numeric:tabular-nums}
+  .bigyear p{color:rgba(255,255,255,.7);max-width:30ch;margin-top:16px}
+  .hlist li{display:grid;grid-template-columns:1fr;gap:4px;padding-block:20px;border-top:1px solid rgba(255,255,255,.18)}
+  .hlist li:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
+  @media (min-width:640px){.hlist li{grid-template-columns:minmax(0,14ch) minmax(0,1fr);column-gap:24px;align-items:baseline}}
+  .hlist .k{font-size:12px;line-height:1.5;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+  .hlist .n{font-size:20px;line-height:1.5;font-weight:500}
+  .hlist .s{grid-column:1/-1;color:rgba(255,255,255,.6);font-size:14px}
+  @media (min-width:640px){.hlist .s{grid-column:2/-1}}
+  .earlier{margin-top:36px;display:grid;grid-template-columns:1fr;gap:4px}
+  @media (min-width:640px){.earlier{grid-template-columns:minmax(0,14ch) minmax(0,1fr);column-gap:24px}}
+  .earlier .n{font-weight:500}
+  .earlier .s{color:rgba(255,255,255,.6);font-size:14px;grid-column:1/-1}
+  @media (min-width:640px){.earlier .s{grid-column:2/-1}}
 
   /* CV */
-  .cv{display:grid;grid-template-columns:1fr;gap:clamp(40px,5vw,72px)}
-  @media (min-width:1000px){.cv{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr)}}
+  .cv{display:grid;grid-template-columns:1fr;gap:48px}
+  @media (min-width:1000px){.cv{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
   .stack{display:flex;flex-direction:column}
-  .stack>.lab{padding-bottom:16px}
-  .row{display:grid;grid-template-columns:1fr;gap:6px;padding-block:22px;border-top:1px solid var(--rule)}
-  @media (min-width:600px){
-    .row{grid-template-columns:minmax(0,1fr) minmax(0,14ch);align-items:baseline;column-gap:24px}
-    .row .when{text-align:right}
-  }
-  .row .role{font-size:1.16rem;font-weight:700;letter-spacing:-.022em;line-height:1.25}
-  .row .org{color:var(--muted);font-size:.94rem}
-  .row .when{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;color:var(--muted);
-    white-space:nowrap;font-variant-numeric:tabular-nums}
-  .row .detail{grid-column:1/-1;color:var(--muted);font-size:.94rem;max-width:62ch;margin-top:4px}
-  .row.now .role::after{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);
-    margin-left:10px;vertical-align:middle}
-  .sub{grid-column:1/-1;margin-top:14px;padding-left:20px;border-left:1px solid var(--rule);
-    display:flex;flex-direction:column;gap:9px}
-  .sub li{display:grid;grid-template-columns:1fr;gap:2px}
-  @media (min-width:600px){
-    .sub li{grid-template-columns:minmax(0,1fr) minmax(0,14ch);column-gap:24px;align-items:baseline}
-    .sub .when{text-align:right}
-  }
-  .sub .role{font-size:.98rem;font-weight:600;letter-spacing:-.012em}
-
-  .lic li{display:flex;align-items:baseline;gap:14px;padding-block:16px;border-top:1px solid var(--rule)}
-  .lic .badge{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;
-    border:1px solid var(--accent);color:var(--accent);padding:3px 8px;flex:none}
-  .lic .name{font-weight:600;font-size:1rem;letter-spacing:-.015em}
+  .stack>.cap{padding-bottom:12px}
+  .row{display:grid;grid-template-columns:1fr;gap:4px;padding-block:20px;border-top:1px solid var(--concrete)}
+  .stack .row:last-child{border-bottom:1px solid var(--concrete)}
+  @media (min-width:600px){.row{grid-template-columns:minmax(0,1fr) minmax(0,13ch);align-items:baseline;column-gap:24px}.row .when{text-align:right}}
+  .row .role{font-size:20px;line-height:1.5;font-weight:500}
+  .row .org{color:var(--steel);font-size:14px}
+  .row .when{font-size:14px;color:var(--steel);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .row .detail{grid-column:1/-1;color:var(--steel);font-size:14px;line-height:1.75;max-width:62ch;margin-top:4px}
+  .row.now .role::after{content:"Current";display:inline-block;font-size:12px;line-height:1.5;font-weight:500;padding:1px 10px;border-radius:30px;background:var(--mist);color:var(--obsidian);margin-left:12px;vertical-align:middle}
+  .sub{grid-column:1/-1;margin-top:12px;padding-left:16px;border-left:1px solid var(--concrete);display:flex;flex-direction:column;gap:6px}
+  .sub li{display:grid;grid-template-columns:1fr;gap:2px;font-size:14px}
+  @media (min-width:600px){.sub li{grid-template-columns:minmax(0,1fr) minmax(0,13ch);column-gap:24px}.sub .when{text-align:right}}
+  .sub .role{font-weight:500;color:var(--obsidian);font-size:14px}
+  .lic li{display:flex;align-items:center;gap:12px;padding-block:14px;border-top:1px solid var(--concrete)}
+  .lic li:last-child{border-bottom:1px solid var(--concrete)}
+  .lic .b{font-size:12px;line-height:1.5;font-weight:500;letter-spacing:.06em;padding:2px 10px;border-radius:30px;border:1px solid var(--concrete);color:var(--steel);flex:none}
+  .lic .name{font-weight:500}
 
   /* services */
   .svc{display:grid;grid-template-columns:1fr}
   @media (min-width:880px){.svc{grid-template-columns:repeat(3,minmax(0,1fr))}}
-  .svc article{padding:clamp(28px,3vw,44px) 0;border-top:1.5px solid var(--ink);
-    display:flex;flex-direction:column;gap:14px}
-  .svc article>*{padding-right:clamp(16px,2.4vw,40px)}
-  @media (min-width:880px){
-    .svc article+article{border-left:1px solid var(--rule)}
-    .svc article+article>*{padding-left:clamp(16px,2.4vw,40px)}
-  }
-  .svc h3{font-size:clamp(1.35rem,2vw,1.75rem);letter-spacing:-.032em;line-height:1.1}
-  .svc p{color:var(--muted);font-size:.98rem}
-  .svc .more{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;
-    text-decoration:none;margin-top:auto;padding-top:10px}
-  .svc .more:hover{color:var(--accent)}
+  .svc article{padding:28px 0;border-top:1px solid var(--concrete);display:flex;flex-direction:column;gap:12px}
+  .svc article>*{padding-right:clamp(16px,2.4vw,36px)}
+  @media (min-width:880px){.svc article+article{border-left:1px solid var(--concrete)}.svc article+article>*{padding-left:clamp(16px,2.4vw,36px)}}
+  .svc p{color:var(--steel);font-size:14px}
+  .svc .more{margin-top:auto;padding-top:8px;font-weight:500;font-size:14px}
+  .svc .more:hover{color:var(--steel)}
 
   /* courses */
-  .courses{display:grid;grid-template-columns:1fr}
-  @media (min-width:880px){.courses{grid-template-columns:repeat(3,minmax(0,1fr))}}
-  .course{display:flex;flex-direction:column;gap:10px;text-decoration:none;
-    padding:clamp(26px,3vw,40px) clamp(16px,2.4vw,36px) clamp(26px,3vw,40px) 0;
-    border-top:1.5px solid var(--ink);transition:background .2s}
-  @media (min-width:880px){
-    .course+.course{border-left:1px solid var(--rule);padding-left:clamp(16px,2.4vw,36px)}
-  }
-  .course:hover,.course:focus-visible{background:var(--shade)}
-  .course .fmt{font-size:clamp(2.4rem,4.6vw,3.9rem);font-weight:800;letter-spacing:-.05em;line-height:1}
-  .course .date{font-family:var(--mono);font-size:.75rem;letter-spacing:.09em;color:var(--accent)}
-  .course .where{color:var(--muted);font-size:.94rem}
-  .course .earn{margin-top:14px;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
-    text-transform:uppercase;color:var(--muted)}
-  .course .earn::after{content:" \2197";color:var(--ink)}
+  .feature{display:grid;grid-template-columns:1fr;gap:24px;padding:32px 0;border-top:1px solid var(--obsidian);border-bottom:1px solid var(--concrete)}
+  @media (min-width:900px){.feature{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) auto;align-items:end;column-gap:48px}}
+  .feature .t{font-family:var(--display);font-weight:500;font-size:clamp(32px,4vw,56px);line-height:1;text-transform:uppercase;margin-top:12px}
+  .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px}
+  .meta dt{font-size:12px;line-height:1.5;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+  .meta dd{font-size:16px;line-height:1.5;font-weight:500;margin-top:2px}
+  .path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px}
+  .path li{padding:20px 20px 20px 0;display:flex;flex-direction:column;gap:2px}
+  .path li+li{padding-left:20px;border-left:1px solid var(--concrete)}
+  .path .f{font-family:var(--display);font-weight:500;font-size:clamp(24px,3vw,36px);line-height:1}
+  .path .k{font-size:14px;color:var(--steel)}
 
   /* affiliations */
-  .affil{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--rule)}
+  .affil{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--concrete)}
   @media (min-width:760px){.affil{grid-template-columns:repeat(5,minmax(0,1fr))}}
-  .affil li{padding:clamp(26px,3vw,40px) 14px;border-bottom:1px solid var(--rule);
-    display:flex;flex-direction:column;justify-content:center;gap:5px;min-height:118px}
-  .affil li:not(:last-child){border-right:1px solid var(--rule)}
+  .affil li{padding:28px 16px;border-bottom:1px solid var(--concrete);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:150px;text-align:center}
+  .affil li:not(:last-child){border-right:1px solid var(--concrete)}
   @media (max-width:759px){.affil li:nth-child(2n){border-right:0}}
-  .affil .org{font-weight:700;letter-spacing:-.022em;font-size:1rem;line-height:1.2}
-  .affil .kind{font-family:var(--mono);font-size:.63rem;letter-spacing:.11em;
-    text-transform:uppercase;color:var(--muted)}
+  .affil img{height:52px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(1) contrast(1.05);opacity:.85;transition:filter .25s,opacity .25s}
+  .affil li:hover img{filter:none;opacity:1}
+  .affil .wm{font-family:var(--display);font-weight:500;font-size:28px;line-height:1;height:52px;display:flex;align-items:center}
+  .affil .k{font-size:12px;line-height:1.5;color:var(--steel)}
 
   /* contact */
-  .contact{display:grid;grid-template-columns:1fr;gap:clamp(40px,5vw,72px)}
+  .contact{display:grid;grid-template-columns:1fr;gap:48px}
   @media (min-width:960px){.contact{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
-  .contact-aside{display:flex;flex-direction:column;gap:30px}
-  .big-mail{font-size:clamp(1.15rem,2.3vw,1.9rem);font-weight:700;letter-spacing:-.035em;
-    text-decoration:none;line-height:1.15;word-break:break-word;
-    border-bottom:2px solid var(--accent);align-self:flex-start;padding-bottom:3px}
-  .big-mail:hover{color:var(--accent)}
-  .meta{display:flex;flex-direction:column;gap:5px}
-  .meta .v{font-size:1rem}
+  .aside{display:flex;flex-direction:column;gap:24px}
+  .aside .mail{font-size:20px;font-weight:500;word-break:break-word;border-bottom:1.5px solid var(--obsidian);align-self:flex-start;padding-bottom:2px}
+  .aside .mail:hover{color:var(--steel);border-color:var(--steel)}
+  .kv{display:flex;flex-direction:column;gap:2px}
   form{display:grid;grid-template-columns:1fr}
-  .field{display:flex;flex-direction:column;gap:8px;padding-block:18px;border-top:1px solid var(--rule)}
-  @media (min-width:640px){.two{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--gap)}}
-  label{font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-  input,select,textarea{font-family:var(--grotesk);font-size:1.02rem;color:var(--ink);
-    border:0;border-bottom:1px solid transparent;background:transparent;padding:2px 0 6px;width:100%}
-  input::placeholder,textarea::placeholder{color:#B9B4B6}
-  input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--accent)}
-  textarea{resize:vertical;min-height:96px;line-height:1.55}
+  .field{display:flex;flex-direction:column;gap:6px;padding-block:16px;border-top:1px solid var(--concrete)}
+  @media (min-width:640px){.two{display:grid;grid-template-columns:1fr 1fr;column-gap:36px}}
+  label{font-size:12px;line-height:1.5;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+  input,select,textarea{font-family:var(--text);font-size:16px;line-height:1.5;color:var(--obsidian);border:0;border-bottom:1px solid transparent;background:transparent;padding:2px 0 6px;width:100%;border-radius:0}
+  input::placeholder,textarea::placeholder{color:var(--faint)}
+  input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--obsidian)}
+  textarea{resize:vertical;min-height:96px}
   select{appearance:none;cursor:pointer}
-  .send{margin-top:26px;justify-self:start;background:var(--ink);color:#fff;border:0;cursor:pointer;
-    font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-    padding:17px 34px;transition:background .18s}
-  .send:hover,.send:focus-visible{background:var(--accent)}
-  .sent{font-size:.9rem;color:var(--muted);margin-top:14px}
+  .send{margin-top:24px;justify-self:start}
+  .sent{font-size:14px;color:var(--steel);margin-top:12px}
 
-  footer{border-top:1px solid var(--rule);padding-block:44px}
-  .foot{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;align-items:baseline}
-  .foot .lab{font-size:.66rem}
+  /* footer */
+  footer{border-top:1px solid var(--concrete);padding-block:48px}
+  .foot{display:grid;grid-template-columns:1fr;gap:36px}
+  @media (min-width:760px){.foot{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .foot h4{font-size:16px;font-weight:500;margin-bottom:12px}
+  .foot ul{display:flex;flex-direction:column;gap:12px}
+  .foot a{color:var(--steel);font-size:16px}
+  .foot a:hover{color:var(--obsidian)}
+  .foot .legal{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;padding-top:36px;border-top:1px solid var(--concrete);font-size:12px;color:var(--steel)}
 
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  :focus-visible{outline:2px solid var(--obsidian);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
-
 
 <header>
   <div class="wrap">
-    <a class="mark" href="#top">GABE RAMOS<em>.</em></a>
+    <a class="mark" href="#top">GABE RAMOS</a>
     <nav>
       <ul>
         <li><a href="#profile">Profile</a></li>
@@ -242,129 +222,106 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#courses">Courses</a></li>
-        <li><a class="nav-cta" href="#contact">Schedule a Call</a></li>
       </ul>
     </nav>
+    <a class="pill pill-sm" href="#contact">Schedule a call</a>
   </div>
 </header>
 
 <main id="top">
 
   <div class="hero">
+    <img src="img/team.jpg" alt="Gabe Ramos in a pre-match huddle with the Manhasset varsity team" fetchpriority="high">
     <div class="wrap">
-      <div class="eyebrow">
-        <span class="dot"></span>
-        <span class="lab">Long Island, New York &nbsp;/&nbsp; U.S. Soccer Coach Educator</span>
-      </div>
-      <h1>Empowering Leaders.<br><span class="lite">Evolving the game.</span></h1>
-      <div class="hero-foot">
-        <p class="lede">
-          Youth soccer technical leader, coach, and U.S. Soccer coach educator building
-          player pathways and coaching standards for the modern era of the game.
-        </p>
-        <ul class="hero-roles">
-          <li><span class="n">01</span><span><strong>Co-Founder &amp; Chief Operating Officer</strong><br>Royal Sporting Group</span></li>
-          <li><span class="n">02</span><span><strong>Head Varsity Soccer Coach</strong><br>Manhasset High School</span></li>
-          <li><span class="n">03</span><span><strong>Coaching Education Instructor</strong><br>U.S. Soccer Federation</span></li>
-        </ul>
+      <span class="cap">Long Island, New York &middot; U.S. Soccer Coach Educator</span>
+      <h1>Empowering leaders. Evolving the game.</h1>
+      <p>Youth soccer technical leader, coach, and U.S. Soccer coach educator building player
+      pathways and coaching standards for the modern era of the game.</p>
+      <div class="hero-cta">
+        <a class="pill pill-light" href="#contact">Schedule a call</a>
+        <a class="ghost" href="#experience">View experience</a>
       </div>
     </div>
+    <span class="hero-caption">Manhasset varsity, Fall 2025</span>
   </div>
 
   <div class="wrap">
     <div class="creds">
-      <div class="cred"><span class="fig">2007</span><span class="cap">Coaching and educating on Long Island since</span></div>
-      <div class="cred"><span class="fig">3<span class="acc">&times;</span></span><span class="cap">Coach of the Year honors, 2023 season alone</span></div>
-      <div class="cred"><span class="fig">B</span><span class="cap">U.S. Soccer national coaching license</span></div>
-      <div class="cred"><span class="fig">M.Ed.</span><span class="cap">Molloy University, Master of Education</span></div>
+      <div class="cred"><span class="fig">2007</span><span class="lbl">Coaching and educating on Long Island since</span></div>
+      <div class="cred"><span class="fig">3&times;</span><span class="lbl">Coach of the Year honors in the 2023 season alone</span></div>
+      <div class="cred"><span class="fig">B</span><span class="lbl">U.S. Soccer national coaching license</span></div>
+      <div class="cred"><span class="fig">M.Ed.</span><span class="lbl">Molloy University, Master of Education</span></div>
     </div>
   </div>
 
   <section id="profile">
     <div class="wrap">
       <div class="head">
-        <span class="lab">01 &nbsp;/&nbsp; Profile</span>
+        <span class="cap">Profile</span>
         <h2>A coach educator, not just a coach.</h2>
       </div>
       <div class="profile">
-        <div class="portrait"><span class="lab">Portrait<br>4:5 &nbsp;/&nbsp; B&amp;W</span></div>
+        <div class="portrait"><span class="cap">Portrait</span></div>
         <div class="bio">
-          <p><strong>Gabe Ramos is a licensed U.S. Soccer coach, coach educator, and player development
-          specialist</strong> dedicated to empowering athletes, coaches, and communities through
-          thoughtful, intentional mentorship.</p>
+          <p class="lead">Gabe Ramos is a licensed U.S. Soccer coach, coach educator, and player development
+          specialist dedicated to empowering athletes, coaches, and communities through thoughtful,
+          intentional mentorship.</p>
           <p>With nearly two decades in youth development, club consulting, and coach education, Gabe
           blends technical expertise, strategic planning, and leadership principles to help players
           reach their highest potential both on and off the field.</p>
           <p>As Co-Founder and Chief Operating Officer of Royal Sporting Group, he oversees training
           programs across multiple community soccer clubs, focusing on building sustainable player
           pathways, improving coaching standards, and fostering positive team cultures.</p>
-          <p class="pull">Develop stronger athletes. Inspire leaders who carry the field into life.</p>
         </div>
-        <div class="stack">
-          <span class="lab">Focus Areas</span>
+        <div class="side">
+          <span class="cap">Focus areas</span>
+          <div class="tags">
+            <span class="tag">Club technical leadership</span>
+            <span class="tag">Curriculum &amp; pathway design</span>
+            <span class="tag">Coach licensing</span>
+            <span class="tag">Mentorship</span>
+            <span class="tag">Player development</span>
+            <span class="tag">Organizational restructuring</span>
+          </div>
+          <span class="cap" style="margin-top:20px">Current roles</span>
           <ul class="lic">
-            <li><span class="badge">A</span><span class="name">Club technical leadership</span></li>
-            <li><span class="badge">B</span><span class="name">Curriculum &amp; pathway design</span></li>
-            <li><span class="badge">C</span><span class="name">Coach licensing &amp; mentorship</span></li>
-            <li><span class="badge">D</span><span class="name">Player development consulting</span></li>
-            <li><span class="badge">E</span><span class="name">Organizational restructuring</span></li>
+            <li><span class="name">Co-Founder &amp; COO, Royal Sporting Group</span></li>
+            <li><span class="name">Head Varsity Coach, Manhasset High School</span></li>
+            <li><span class="name">Coaching Education Instructor, U.S. Soccer</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="inverse" id="honors">
+  <section class="dark" id="honors">
     <div class="wrap">
       <div class="head">
-        <span class="lab">02 &nbsp;/&nbsp; Honors &amp; Awards</span>
+        <span class="cap">Honors &amp; awards</span>
         <div>
-          <h2>Five honors.<br>One season.</h2>
-          <p>Leading Sacred Heart Academy to a state title in 2023 &mdash; and being named Coach of
-          the Year by three separate bodies for it.</p>
+          <h2>Five honors. One season.</h2>
+          <p>Leading Sacred Heart Academy to a state title in 2023 &mdash; and being named Coach of the
+          Year by three separate bodies for it.</p>
         </div>
       </div>
-
       <div class="honors">
         <div class="bigyear">
           <span class="y">2023</span>
-          <p>A single campaign that swept the league, the state, and every regional coaching award
-          on the board.</p>
+          <p>A single campaign that swept the league, the state, and every regional coaching award on
+          the board.</p>
         </div>
-
-        <ul class="honor-list">
-          <li>
-            <span class="kind">Championship</span>
-            <span class="nm">New York State Catholic High School Champions</span>
-            <span class="src">Sacred Heart Academy &mdash; Head Varsity Coach</span>
-          </li>
-          <li>
-            <span class="kind">Championship</span>
-            <span class="nm">CHSAA League Champions</span>
-            <span class="src">Catholic High School Athletic Association</span>
-          </li>
-          <li>
-            <span class="kind">Individual</span>
-            <span class="nm">CHSAA Coach of the Year</span>
-            <span class="src">Catholic High School Athletic Association</span>
-          </li>
-          <li>
-            <span class="kind">Individual</span>
-            <span class="nm">Newsday Nassau Coach of the Year</span>
-            <span class="src">Newsday &mdash; Nassau County</span>
-          </li>
-          <li>
-            <span class="kind">Individual</span>
-            <span class="nm">New York High School Girls Coach of the Year</span>
-            <span class="src">United Soccer Coaches</span>
-          </li>
+        <ul class="hlist">
+          <li><span class="k">Championship</span><span class="n">New York State Catholic High School Champions</span><span class="s">Sacred Heart Academy &mdash; Head Varsity Coach</span></li>
+          <li><span class="k">Championship</span><span class="n">CHSAA League Champions</span><span class="s">Catholic High School Athletic Association</span></li>
+          <li><span class="k">Individual</span><span class="n">CHSAA Coach of the Year</span><span class="s">Catholic High School Athletic Association</span></li>
+          <li><span class="k">Individual</span><span class="n">Newsday Nassau Coach of the Year</span><span class="s">Newsday &mdash; Nassau County</span></li>
+          <li><span class="k">Individual</span><span class="n">New York High School Girls Coach of the Year</span><span class="s">United Soccer Coaches</span></li>
         </ul>
       </div>
-
       <div class="earlier">
-        <span class="lab">Earlier recognition</span>
-        <div class="nm">1st Place &mdash; Best Use of Social Media</div>
-        <div class="src">New York State Press Association (NYPA) &mdash; Chaminade High School</div>
+        <span class="cap">Earlier recognition</span>
+        <span class="n">1st Place &mdash; Best Use of Social Media</span>
+        <span class="s">New York State Press Association (NYPA) &mdash; Chaminade High School</span>
       </div>
     </div>
   </section>
@@ -372,23 +329,19 @@
   <section id="experience">
     <div class="wrap">
       <div class="head">
-        <span class="lab">03 &nbsp;/&nbsp; Curriculum Vitae</span>
+        <span class="cap">Curriculum vitae</span>
         <div>
           <h2>Experience &amp; credentials.</h2>
-          <p>Nineteen years across club operations, high school competition, classroom education,
-          and national-body coach licensing.</p>
+          <p>Nineteen years across club operations, high school competition, classroom education, and
+          national-body coach licensing.</p>
         </div>
       </div>
-
       <div class="cv">
         <div class="stack">
-          <span class="lab lab-ink">Appointments</span>
+          <span class="cap cap-ink">Appointments</span>
 
           <div class="row now">
-            <div>
-              <div class="role">Co-Founder &amp; Chief Operating Officer</div>
-              <div class="org">Royal Sporting Group &mdash; New York</div>
-            </div>
+            <div><div class="role">Co-Founder &amp; Chief Operating Officer</div><div class="org">Royal Sporting Group &mdash; New York</div></div>
             <div class="when">2018 &ndash; Present</div>
             <p class="detail">Oversees training programs across multiple community soccer clubs; builds
             sustainable player pathways, raises coaching standards, and supplies clubs with the
@@ -396,39 +349,29 @@
           </div>
 
           <div class="row now">
-            <div>
-              <div class="role">Coaching Education Instructor</div>
-              <div class="org">U.S. Soccer Federation &mdash; Grassroots Pathway</div>
-            </div>
-            <div class="when">2024 &ndash; Present</div>
-            <p class="detail">Delivers official 7v7, 9v9, and 11v11 Grassroots licensing courses and
-            ongoing on-field mentorship for coaches from first-time parent volunteers to club directors.</p>
+            <div><div class="role">Head Varsity Soccer Coach</div><div class="org">Manhasset High School &mdash; Manhasset, NY</div></div>
+            <div class="when">2025 &ndash; Present</div>
+            <p class="detail">First season, Fall 2025: <strong>10&ndash;3&ndash;1</strong>, 46 goals for and 13 against.
+            Reached the Nassau County quarterfinals, falling to Long Beach.</p>
           </div>
 
           <div class="row now">
-            <div>
-              <div class="role">Head Varsity Soccer Coach</div>
-              <div class="org">Manhasset High School &mdash; Manhasset, NY</div>
-            </div>
-            <div class="when">Present</div>
+            <div><div class="role">Coaching Education Instructor</div><div class="org">U.S. Soccer Federation &mdash; Licensing pathway</div></div>
+            <div class="when">2024 &ndash; Present</div>
+            <p class="detail">Delivers official U.S. Soccer licensing courses and ongoing on-field mentorship
+            for coaches from first-time parent volunteers to club directors.</p>
           </div>
 
           <div class="row">
-            <div>
-              <div class="role">Head Varsity Soccer Coach</div>
-              <div class="org">Sacred Heart Academy &mdash; Hempstead, NY</div>
-            </div>
+            <div><div class="role">Head Varsity Soccer Coach</div><div class="org">Sacred Heart Academy &mdash; Hempstead, NY</div></div>
             <div class="when">2023 &ndash; 2025</div>
-            <p class="detail">Led the program to the 2023 New York State Catholic High School
-            championship and the CHSAA league title, earning Coach of the Year recognition from
-            CHSAA, Newsday, and United Soccer Coaches in the same season.</p>
+            <p class="detail">Led the program to the 2023 New York State Catholic High School championship
+            and the CHSAA league title, earning Coach of the Year recognition from CHSAA, Newsday, and
+            United Soccer Coaches in the same season.</p>
           </div>
 
           <div class="row">
-            <div>
-              <div class="role">Chaminade High School</div>
-              <div class="org">Mineola, NY &mdash; Athletics, faculty &amp; counseling</div>
-            </div>
+            <div><div class="role">Chaminade High School</div><div class="org">Mineola, NY &mdash; Athletics, faculty &amp; counseling</div></div>
             <div class="when">2007 &ndash; 2022</div>
             <ul class="sub">
               <li><span class="role">Soccer Coach</span><span class="when">2007 &ndash; 2018</span></li>
@@ -442,21 +385,22 @@
         </div>
 
         <div class="stack">
-          <span class="lab lab-ink">Licenses &amp; Certifications</span>
+          <span class="cap cap-ink">Licenses &amp; certifications</span>
           <ul class="lic">
-            <li><span class="badge">USSF</span><span class="name">&lsquo;B&rsquo; Coaching License</span></li>
-            <li><span class="badge">USSF</span><span class="name">Club Technical Leadership</span></li>
-            <li><span class="badge">USSF</span><span class="name">Coach Instructor</span></li>
-            <li><span class="badge">AHA</span><span class="name">CPR &amp; AED Instructor</span></li>
+            <li><span class="b">USSF</span><span class="name">&lsquo;B&rsquo; Coaching License</span></li>
+            <li><span class="b">USSF</span><span class="name">Club Technical Leadership</span></li>
+            <li><span class="b">USSF</span><span class="name">Coach Instructor</span></li>
+            <li><span class="b">AHA</span><span class="name">CPR &amp; AED Instructor</span></li>
           </ul>
 
-          <span class="lab lab-ink" style="padding-top:44px">Education</span>
+          <span class="cap cap-ink" style="padding-top:40px">Education</span>
           <div class="row">
-            <div>
-              <div class="role">Master of Education</div>
-              <div class="org">Molloy University &mdash; Rockville Centre, NY</div>
-            </div>
-            
+            <div><div class="role">Master of Education</div><div class="org">Molloy University &mdash; Rockville Centre, NY</div></div>
+            <div class="when">2018</div>
+          </div>
+          <div class="row">
+            <div><div class="role">B.S., Business Administration &amp; Management</div><div class="org">Molloy University &mdash; Rockville Centre, NY</div></div>
+            <div class="when">2005 &ndash; 2008</div>
           </div>
         </div>
       </div>
@@ -468,7 +412,7 @@
   <section id="services">
     <div class="wrap">
       <div class="head">
-        <span class="lab">04 &nbsp;/&nbsp; Services</span>
+        <span class="cap">Services</span>
         <div>
           <h2>Three ways clubs work with me.</h2>
           <p>Bespoke organizational restructuring, licensing, and mentorship for youth organizations
@@ -477,19 +421,19 @@
       </div>
       <div class="svc">
         <article>
-          <h3>Club Technical<br>Services</h3>
+          <h3>Club technical services</h3>
           <p>Strategic leadership and curriculum design to establish high-level player pathways and
           coaching standards across your organization.</p>
           <a class="more" href="#contact">Discuss your club &rarr;</a>
         </article>
         <article>
-          <h3>Coach<br>Education</h3>
-          <p>Certified U.S. Soccer Grassroots licensing and intentional mentorship programs to empower
-          modern educators of the game.</p>
+          <h3>Coach education</h3>
+          <p>Certified U.S. Soccer licensing and intentional mentorship programs to empower modern
+          educators of the game.</p>
           <a class="more" href="#courses">See upcoming courses &rarr;</a>
         </article>
         <article>
-          <h3>Player<br>Mentorship</h3>
+          <h3>Player mentorship</h3>
           <p>Strategic individual guidance to help dedicated athletes navigate the high-performance
           landscape and the college pathway.</p>
           <a class="more" href="#contact">Request availability &rarr;</a>
@@ -501,48 +445,48 @@
   <section id="courses">
     <div class="wrap">
       <div class="head">
-        <span class="lab">05 &nbsp;/&nbsp; Upcoming Courses</span>
+        <span class="cap">Upcoming courses</span>
         <div>
-          <h2>Official U.S. Soccer<br>Grassroots licensing.</h2>
-          <p>Courses run in sequence through the small-sided pathway. Upcoming dates and registration
-          are posted on the U.S. Soccer Learning Center.</p>
+          <h2>Official U.S. Soccer coaching licensure.</h2>
+          <p>Registration is handled on the U.S. Soccer Learning Center. Grassroots courses are scheduled
+          on request for clubs and leagues.</p>
         </div>
       </div>
-      <div class="courses">
-        <a class="course" href="https://learning.ussoccer.com/coach/courses/available">
-          <span class="fmt">7v7</span>
-          <span class="date">Next date TBA</span>
-          <span class="where">Manhasset, NY</span>
-          <span class="earn">Earn: Official 7v7 License</span>
-        </a>
-        <a class="course" href="https://learning.ussoccer.com/coach/courses/available">
-          <span class="fmt">9v9</span>
-          <span class="date">Next date TBA</span>
-          <span class="where">Manhasset, NY</span>
-          <span class="earn">Earn: Official 9v9 License</span>
-        </a>
-        <a class="course" href="https://learning.ussoccer.com/coach/courses/available">
-          <span class="fmt">11v11</span>
-          <span class="date">Next date TBA</span>
-          <span class="where">Manhasset, NY</span>
-          <span class="earn">Earn: Official 11v11 License</span>
-        </a>
+
+      <div class="feature">
+        <div>
+          <span class="cap">Next course</span>
+          <div class="t">USSF D License</div>
+        </div>
+        <dl class="meta">
+          <div><dt>Starts</dt><dd>Oct 5, 2026</dd></div>
+          <div><dt>Time</dt><dd>8:00 &ndash; 10:00 PM ET</dd></div>
+          <div><dt>Host</dt><dd>East Coast Surf &mdash; West Hempstead, NY</dd></div>
+          <div><dt>Coordinated with</dt><dd>ENYYSA</dd></div>
+        </dl>
+        <a class="pill" href="https://learning.ussoccer.com/coach/courses/available">Register on the Learning Center</a>
       </div>
+
+      <ul class="path">
+        <li><span class="f">7v7</span><span class="k">Grassroots &middot; on request</span></li>
+        <li><span class="f">9v9</span><span class="k">Grassroots &middot; on request</span></li>
+        <li><span class="f">11v11</span><span class="k">Grassroots &middot; on request</span></li>
+      </ul>
     </div>
   </section>
 
   <section>
     <div class="wrap">
       <div class="head">
-        <span class="lab">06 &nbsp;/&nbsp; Affiliations</span>
+        <span class="cap">Affiliations</span>
         <h2>Strategic affiliations &amp; partnerships.</h2>
       </div>
       <ul class="affil">
-        <li><span class="org">U.S. Soccer</span><span class="kind">Federation</span></li>
-        <li><span class="org">Royal Sporting Group</span><span class="kind">Co-Founder / COO</span></li>
-        <li><span class="org">Manhasset Soccer</span><span class="kind">Club</span></li>
-        <li><span class="org">ENYYSA</span><span class="kind">State Association</span></li>
-        <li><span class="org">LIJSL</span><span class="kind">League</span></li>
+        <li><img src="img/ussf.svg" alt="U.S. Soccer"><span class="k">U.S. Soccer Federation</span></li>
+        <li><img src="img/royal.svg" alt="Royal Sporting Group"><span class="k">Royal Sporting Group</span></li>
+        <li><img src="img/manhasset.jpg" alt="Manhasset"><span class="k">Manhasset Soccer</span></li>
+        <li><span class="wm">ENYYSA</span><span class="k">Eastern New York Youth Soccer</span></li>
+        <li><img src="img/lijsl.png" alt="LIJSL"><span class="k">Long Island Junior Soccer League</span></li>
       </ul>
     </div>
   </section>
@@ -552,46 +496,26 @@
   <section id="contact">
     <div class="wrap">
       <div class="head">
-        <span class="lab">07 &nbsp;/&nbsp; Contact</span>
+        <span class="cap">Contact</span>
         <h2>Let&rsquo;s connect.</h2>
       </div>
       <div class="contact">
-        <div class="contact-aside">
-          <p class="lede">Direct all inquiries regarding coaching education, club technical services,
-          and professional mentorship to the address below.</p>
-          <a class="big-mail" href="mailto:gramos@royalsportinggroup.com">gramos@royalsportinggroup.com</a>
-          <div class="meta">
-            <span class="lab">Location</span>
-            <span class="v">Long Island, New York &mdash; United States</span>
-          </div>
-          <div class="meta">
-            <span class="lab">Organization</span>
-            <span class="v"><a href="https://royalsportinggroup.com/">Royal Sporting Group &rarr;</a></span>
-          </div>
-          <div class="meta">
-            <span class="lab">Profile</span>
-            <span class="v"><a href="https://www.linkedin.com/in/gaberamosmgmt/">LinkedIn &rarr;</a></span>
-          </div>
+        <div class="aside">
+          <p>Direct all inquiries regarding coaching education, club technical services, and professional
+          mentorship to the address below.</p>
+          <a class="mail" href="mailto:gramos@royalsportinggroup.com">gramos@royalsportinggroup.com</a>
+          <div class="kv"><span class="cap">Location</span><span>Long Island, New York &mdash; United States</span></div>
+          <div class="kv"><span class="cap">Organization</span><a href="https://royalsportinggroup.com/">Royal Sporting Group &rarr;</a></div>
+          <div class="kv"><span class="cap">Profile</span><a href="https://www.linkedin.com/in/gaberamosmgmt/">LinkedIn &rarr;</a></div>
         </div>
-
         <form id="inquiry">
           <div class="two">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" required placeholder="Your full name">
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="you@club.org">
-            </div>
+            <div class="field"><label for="name">Name</label><input id="name" name="name" required placeholder="Your full name"></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@club.org"></div>
           </div>
           <div class="two">
-            <div class="field">
-              <label for="org">Club or Organization</label>
-              <input id="org" name="org" placeholder="Optional">
-            </div>
-            <div class="field">
-              <label for="topic">Inquiry Type</label>
+            <div class="field"><label for="org">Club or organization</label><input id="org" name="org" placeholder="Optional"></div>
+            <div class="field"><label for="topic">Inquiry type</label>
               <select id="topic" name="topic">
                 <option>Club technical services</option>
                 <option>Coach education / licensing course</option>
@@ -601,11 +525,8 @@
               </select>
             </div>
           </div>
-          <div class="field">
-            <label for="msg">What are you looking for?</label>
-            <textarea id="msg" name="msg" required placeholder="A few sentences about your club, your timeline, and what you need."></textarea>
-          </div>
-          <button class="send" type="submit">Send Inquiry</button>
+          <div class="field"><label for="msg">What are you looking for?</label><textarea id="msg" name="msg" required placeholder="A few sentences about your club, your timeline, and what you need."></textarea></div>
+          <button class="pill send" type="submit">Send inquiry</button>
           <p class="sent" id="sent" hidden>Opening your mail app with this message ready to send.</p>
         </form>
       </div>
@@ -615,9 +536,11 @@
 
 <footer>
   <div class="wrap foot">
-    <span class="mark">GABE RAMOS<em>.</em></span>
-    <span class="lab">&copy; 2026 Gabe Ramos Soccer &mdash; All rights reserved</span>
-    <span class="lab">Long Island, NY</span>
+    <div><h4>Gabe Ramos</h4><ul><li><a href="#profile">Profile</a></li><li><a href="#honors">Honors</a></li><li><a href="#experience">Experience</a></li></ul></div>
+    <div><h4>Work with me</h4><ul><li><a href="#services">Club technical services</a></li><li><a href="#courses">Coach education</a></li><li><a href="#contact">Player mentorship</a></li></ul></div>
+    <div><h4>Courses</h4><ul><li><a href="#courses">USSF D License &mdash; Oct 2026</a></li><li><a href="https://learning.ussoccer.com/coach/courses/available">U.S. Soccer Learning Center</a></li></ul></div>
+    <div><h4>Connect</h4><ul><li><a href="mailto:gramos@royalsportinggroup.com">Email</a></li><li><a href="https://www.linkedin.com/in/gaberamosmgmt/">LinkedIn</a></li><li><a href="https://royalsportinggroup.com/">Royal Sporting Group</a></li></ul></div>
+    <div class="legal"><span>&copy; 2026 Gabe Ramos Soccer. All rights reserved.</span><span>Long Island, NY</span></div>
   </div>
 </footer>
 
@@ -626,14 +549,8 @@
     e.preventDefault();
     var f = e.target;
     var subject = 'Inquiry: ' + f.topic.value;
-    var body = [
-      'Name: ' + f.name.value,
-      'Email: ' + f.email.value,
-      'Organization: ' + (f.org.value || '—'),
-      'Inquiry type: ' + f.topic.value,
-      '',
-      f.msg.value
-    ].join('\n');
+    var body = ['Name: ' + f.name.value, 'Email: ' + f.email.value,
+      'Organization: ' + (f.org.value || '—'), 'Inquiry type: ' + f.topic.value, '', f.msg.value].join('\n');
     document.getElementById('sent').hidden = false;
     window.location.href = 'mailto:gramos@royalsportinggroup.com?subject=' +
       encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
