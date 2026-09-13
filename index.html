@@ -271,7 +271,11 @@
   textarea{resize:vertical;min-height:110px}
   select{appearance:none;cursor:pointer;padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23ffffff' stroke-width='1.5'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
   select option{color:var(--ink)}
-  .sent{font-size:14px;color:rgba(255,255,255,.7)}
+  .sent{font-size:14px;color:rgba(255,255,255,.85);padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid var(--line-dark)}
+  .sent.ok{border-color:rgba(120,200,150,.5)}
+  .sent.err{border-color:var(--red)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+  .btn[disabled]{opacity:.6;cursor:progress}
 
   /* footer */
   footer{padding:40px 0;border-top:1px solid var(--line)}
@@ -479,12 +483,16 @@
       </div>
       <div class="contact">
         <div class="cside">
-          <a class="mail" href="mailto:gramos@royalsportinggroup.com">gramos@royalsportinggroup.com</a>
+          <a class="mail" id="mail" href="#contact" data-u="gramos" data-d="royalsportinggroup.com">gramos<span aria-hidden="true">&#64;</span>royalsportinggroup.com</a>
           <div class="kv"><span class="k">Location</span><span>Long Island, New York &mdash; United States</span></div>
           <div class="kv"><span class="k">Organization</span><a href="https://royalsportinggroup.com/">Royal Sporting Group &nearr;</a></div>
           <div class="kv"><span class="k">Profile</span><a href="https://www.linkedin.com/in/gaberamosmgmt/">LinkedIn &nearr;</a></div>
         </div>
-        <form id="inquiry">
+        <form id="inquiry" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="d340d6f5-a644-461d-9440-1f5131014671">
+          <input type="hidden" name="subject" value="New inquiry from gaberamossoccer.com">
+          <input type="hidden" name="from_name" value="gaberamossoccer.com">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="two">
             <div class="field"><label for="name">Name</label><input id="name" name="name" required placeholder="Your full name"></div>
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@club.org"></div>
@@ -494,9 +502,9 @@
             <div class="field"><label for="topic">Inquiry type</label>
               <select id="topic" name="topic"><option>Club technical services</option><option>Coach education / licensing course</option><option>Player mentorship</option><option>Speaking or clinic</option><option>Something else</option></select></div>
           </div>
-          <div class="field"><label for="msg">What are you looking for?</label><textarea id="msg" name="msg" required placeholder="A few sentences about your club, your timeline, and what you need."></textarea></div>
+          <div class="field"><label for="msg">What are you looking for?</label><textarea id="msg" name="message" required placeholder="A few sentences about your club, your timeline, and what you need."></textarea></div>
           <button class="btn btn-red" type="submit" style="justify-self:start"><span>Send inquiry</span><span class="arr" aria-hidden="true">&rsaquo;</span></button>
-          <p class="sent" id="sent" hidden>Opening your mail app with this message ready to send.</p>
+          <p class="sent" id="sent" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </div>
@@ -538,12 +546,27 @@
       a.addEventListener('click', function () { hero.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.textContent='Menu'; });
     });
   })();
-  document.getElementById('inquiry').addEventListener('submit', function (e) {
+  (function () {
+    var m = document.getElementById('mail');
+    if (m) m.href = 'mailto:' + m.dataset.u + '@' + m.dataset.d;
+  })();
+  document.getElementById('inquiry').addEventListener('submit', async function (e) {
     e.preventDefault();
-    var f = e.target, subject = 'Inquiry: ' + f.topic.value;
-    var body = ['Name: ' + f.name.value, 'Email: ' + f.email.value, 'Organization: ' + (f.org.value || '—'), 'Inquiry type: ' + f.topic.value, '', f.msg.value].join('\n');
-    document.getElementById('sent').hidden = false;
-    window.location.href = 'mailto:gramos@royalsportinggroup.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    var f = e.target, msg = document.getElementById('sent'), btn = f.querySelector('button[type=submit]');
+    var say = function (text, cls) { msg.textContent = text; msg.className = 'sent ' + cls; msg.hidden = false; };
+    if (!f.name.value.trim() || !f.email.value.trim() || !f.message.value.trim()) { say('Please add your name, email, and a short message.', 'err'); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value)) { say('That email address doesn\u2019t look right \u2014 please check it.', 'err'); return; }
+    var data = new FormData(f);
+    data.set('subject', 'Inquiry: ' + f.topic.value + ' \u2014 ' + f.name.value);
+    data.set('replyto', f.email.value);
+    btn.disabled = true; say('Sending\u2026', '');
+    try {
+      var r = await fetch(f.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      var j = await r.json();
+      if (r.ok && j.success) { f.reset(); say('Thanks \u2014 your message is in. I\u2019ll be in touch within two business days.', 'ok'); }
+      else { say('Something went wrong sending that. Email me directly at gramos@royalsportinggroup.com.', 'err'); }
+    } catch (err) { say('Network hiccup \u2014 please try again, or email gramos@royalsportinggroup.com.', 'err'); }
+    finally { btn.disabled = false; }
   });
 </script>
 </body>
