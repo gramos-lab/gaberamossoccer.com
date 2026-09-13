@@ -75,6 +75,8 @@
   .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(17,17,17,.92) 0%,rgba(17,17,17,.62) 45%,rgba(17,17,17,.12) 78%)}
   .hero .wrap{position:relative;z-index:1;width:100%;padding-top:clamp(120px,24vh,260px);padding-bottom:clamp(36px,5vw,64px)}
   .hero .cap{color:rgba(255,255,255,.72);margin-bottom:20px}
+  .hero .cap span{display:inline-block}
+  @media (max-width:560px){.hero .cap .sep{display:none}.hero .cap span{display:block}}
   h1{
     font-family:var(--display);font-weight:500;text-transform:uppercase;
     font-size:clamp(40px,6.4vw,76px);line-height:1;letter-spacing:.005em;
@@ -249,6 +251,7 @@
     nav a{display:block;padding:14px 0;border-bottom:1px solid var(--concrete);font-size:18px}
     nav li:last-child a{border-bottom:0}
   }
+  @media (max-width:560px){.hdr-actions .pill:not(.menu-btn){display:none}}
 
   @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -279,7 +282,7 @@
   <div class="hero">
     <img src="img/team.jpg" alt="Gabe Ramos in a pre-match huddle with the Manhasset varsity team" width="1800" height="1200" fetchpriority="high" decoding="async">
     <div class="wrap">
-      <span class="cap">Long Island, New York &middot; U.S. Soccer Coach Educator</span>
+      <span class="cap"><span>Long Island, New York</span><span class="sep"> &middot; </span><span>U.S. Soccer Coach Educator</span></span>
       <h1>Empowering leaders. Evolving the game.</h1>
       <p>Youth soccer technical leader, coach, and U.S. Soccer coach educator building player
       pathways and coaching standards for the modern era of the game.</p>
