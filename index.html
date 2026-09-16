@@ -145,7 +145,7 @@
   .btn-red:hover{background:var(--red-deep)}
   .btn-navy{background:var(--navy);color:#fff}.btn-navy .arr{background:#fff;color:var(--navy)}
   .btn-white{background:#fff;color:var(--navy)}.btn-white .arr{background:var(--red);color:#fff}
-  .link{font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+  .link{display:inline-block;padding:10px 0;font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
   .link:hover{color:var(--red)}
   .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;white-space:nowrap}
   .pill-outline{border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85)}
@@ -216,7 +216,7 @@
   }
   .nav-actions{display:flex;align-items:center;gap:8px;flex:none}
   @media (max-width:640px){.nav .btn-white{display:none}.nav{padding-block:16px}.mark{height:36px}}
-  .menu-btn{display:inline-flex}
+  .menu-btn{display:inline-flex;min-height:44px;padding-inline:18px}
   @media (min-width:900px){.menu-btn{display:none}}
   .mobile-nav{display:none;position:fixed;inset:0;z-index:100;background:var(--navy-deep);color:#fff;flex-direction:column;padding:16px clamp(20px,5vw,32px) 28px;overflow:auto;-webkit-overflow-scrolling:touch}
   body.menu-open .mobile-nav{display:flex}
@@ -337,7 +337,7 @@
   .scard h4{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:18px;color:var(--navy)}
   .lic li{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-weight:500}
   .lic li:first-child{border-top:0}
-  .lic .b{font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:var(--navy);color:#fff;flex:none}
+  .lic .b{font-size:12px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:var(--navy);color:#fff;flex:none}
   .edu{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);flex-wrap:wrap}
   .edu:first-of-type{border-top:0}
   .edu span:last-child{color:var(--muted);font-size:14px}
@@ -354,7 +354,7 @@
   .event h3{font-family:var(--display);font-weight:800;font-stretch:85%;text-transform:uppercase;font-size:clamp(34px,4.6vw,56px);line-height:.95}
   .event dl{display:grid;grid-template-columns:1fr;gap:12px 20px}
   @media (min-width:480px){.event dl{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px}}
-  .event dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
+  .event dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
   .event dd{font-weight:600;margin-top:2px}
   .event .btn{align-self:flex-start;margin-top:6px}
   .mini{display:grid;grid-template-columns:1fr;gap:16px}
@@ -366,7 +366,7 @@
   .mini a.m:hover,.mini a.m:focus-visible{border-color:var(--red);transform:translateY(-1px)}
   .mini .go{width:32px;height:32px;border-radius:50%;background:var(--off);color:var(--navy);display:grid;place-items:center;font-size:18px;flex:none;transition:background-color .2s,color .2s}
   .mini a.m:hover .go{background:var(--red);color:#fff}
-  .m-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--navy);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding:4px 2px}
+  .m-cta{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;font-size:14px;color:var(--navy);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding:4px 2px}
   .m-cta:hover{color:var(--red)}
 
   /* contact */
@@ -376,12 +376,12 @@
   .cside .mail{font-family:var(--display);font-weight:800;font-stretch:88%;font-size:clamp(20px,2.4vw,30px);word-break:break-word;color:#fff}
   .cside .mail:hover{color:var(--red)}
   .kv{display:flex;flex-direction:column;gap:2px}
-  .kv .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
+  .kv .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
   .kv a:hover{text-decoration:underline}
   form{background:var(--navy-card);border:1px solid var(--line-dark);border-radius:var(--r-card);padding:26px;display:grid;grid-template-columns:1fr;gap:16px}
   @media (min-width:640px){.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}}
   .field{display:flex;flex-direction:column;gap:6px}
-  label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600}
+  label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600}
   input,select,textarea{font-family:var(--body);font-size:16px;color:#fff;background:rgba(255,255,255,.06);border:1px solid var(--line-dark);border-radius:12px;padding:12px 14px;width:100%}
   input::placeholder,textarea::placeholder{color:rgba(255,255,255,.45)}
   input:focus,select:focus,textarea:focus{outline:none;border-color:#fff}
@@ -407,7 +407,7 @@
   .faddr a{color:var(--navy);font-weight:600}
   .faddr a:hover{color:var(--red)}
   .foot ul{display:flex;flex-wrap:wrap;gap:8px 20px}
-  .foot a{font-size:14px;font-weight:500;color:var(--muted)}
+  .foot a{display:inline-block;padding:8px 0;font-size:14px;font-weight:500;color:var(--muted)}
   .foot a:hover{color:var(--navy)}
   .foot small{font-size:13px;color:var(--muted)}
 
@@ -490,7 +490,7 @@
         <div class="tile"><span class="ic"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="big">M.Ed.</span><span class="lbl">Molloy University, Master of Education</span></div>
       </div>
       <div class="bio">
-        <div class="portrait"><img src="img/portrait-2.jpg" alt="Portrait of Gabe Ramos" width="928" height="1152" loading="lazy" decoding="async"></div>
+        <div class="portrait"><img src="img/portrait-2.jpg" alt="Portrait of Gabe Ramos" width="720" height="894" loading="lazy" decoding="async"></div>
         <div class="bio-text">
           <p class="lead">Gabe Ramos is a licensed U.S. Soccer coach, coach educator, and player development specialist dedicated to empowering athletes, coaches, and communities through thoughtful, intentional mentorship.</p>
           <p>With nearly two decades in youth development, club consulting, and coach education, Gabe blends technical expertise, strategic planning, and leadership principles to help players reach their highest potential both on and off the field.</p>
@@ -511,7 +511,7 @@
         <div class="side"><p class="lead">A single 2023 campaign at Sacred Heart Academy that swept the league, the state, and every regional coaching award on the board.</p></div>
       </div>
       <div class="cards">
-        <div class="card card-photo"><img src="img/sacred-heart.jpg" alt="Gabe Ramos addressing the Sacred Heart Academy Spartans in a pre-match huddle" width="1800" height="1200" loading="lazy" decoding="async"><div class="over"><div><strong>Sacred Heart Academy</strong><span>Spartans &mdash; Hempstead, NY</span></div><span class="pill pill-red">2023 season</span></div></div>
+        <div class="card card-photo"><img src="img/sacred-heart.jpg" alt="Gabe Ramos addressing the Sacred Heart Academy Spartans in a pre-match huddle" width="1600" height="1067" loading="lazy" decoding="async"><div class="over"><div><strong>Sacred Heart Academy</strong><span>Spartans &mdash; Hempstead, NY</span></div><span class="pill pill-red">2023 season</span></div></div>
         <div class="card"><div class="tagrow"><span class="pill pill-red">Championship</span><span class="year">2023</span></div><h3>New York State Catholic High School Champions</h3><p class="meta">Sacred Heart Academy &mdash; Head Varsity Coach</p></div>
         <div class="card"><div class="tagrow"><span class="pill pill-red">Championship</span><span class="year">2023</span></div><h3>CHSAA League Champions</h3><p class="meta">Catholic High School Athletic Association</p></div>
         <div class="card"><div class="tagrow"><span class="pill pill-dark">Individual</span><span class="year">2023</span></div><h3>CHSAA Coach of the Year</h3><p class="meta">Catholic High School Athletic Association</p></div>
@@ -538,7 +538,7 @@
       </div>
       <p class="logos-cap">Clubs We Work With</p>
       <div class="logos" aria-label="Clubs we work with">
-        <span class="chip"><img src="img/carle-place.png" alt="Carle Place Soccer Club" width="360" height="360"></span><span class="chip"><img src="img/franklin-square.png" alt="Franklin Square Raiders Soccer Club" width="360" height="360"></span><span class="chip"><img src="img/garden-city.png" alt="Garden City Centennial Soccer Club" width="360" height="360"></span><span class="chip"><img src="img/manhasset.png" alt="Manhasset Soccer Club" width="360" height="360"></span><span class="chip"><img src="img/miller-place.png" alt="Miller Place Soccer Club" width="360" height="360"></span>
+        <span class="chip"><img src="img/carle-place.png" alt="Carle Place Soccer Club" width="240" height="240" loading="lazy" decoding="async"></span><span class="chip"><img src="img/franklin-square.png" alt="Franklin Square Raiders Soccer Club" width="240" height="240" loading="lazy" decoding="async"></span><span class="chip"><img src="img/garden-city.png" alt="Garden City Centennial Soccer Club" width="240" height="240" loading="lazy" decoding="async"></span><span class="chip"><img src="img/manhasset.png" alt="Manhasset Soccer Club" width="240" height="240" loading="lazy" decoding="async"></span><span class="chip"><img src="img/miller-place.png" alt="Miller Place Soccer Club" width="240" height="240" loading="lazy" decoding="async"></span>
       </div>
     </div>
   </section>
@@ -633,7 +633,7 @@
       </div>
       <div class="course-grid">
         <div class="event">
-          <img class="bg" src="img/coaching.jpg" alt="" width="1600" height="893" loading="lazy" decoding="async">
+          <img class="bg" src="img/coaching.jpg" alt="" width="1400" height="781" loading="lazy" decoding="async">
           <span class="pill pill-red" style="align-self:flex-start">Next course</span>
           <h3>USSF D License</h3>
           <dl>
