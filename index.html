@@ -195,6 +195,14 @@
     .hero-img::before{background:linear-gradient(0deg,var(--navy-deep) 0%,var(--navy-deep) 46%,rgba(20,26,46,.55) 75%,rgba(20,26,46,.25) 100%)}
   }
 
+  /* federations & associations strip (above the footer) */
+  .affil{padding:clamp(36px,5vw,56px) 0 clamp(28px,4vw,44px);border-bottom:1px solid var(--line)}
+  .affil-cap{text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:24px}
+  .affil-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px clamp(28px,5vw,64px)}
+  .affil-row li{display:flex;align-items:center;gap:14px;font-weight:600;font-size:16px;color:#8A90A3;filter:grayscale(1);opacity:.55;transition:filter .25s ease,opacity .25s ease,color .25s ease;cursor:default}
+  .affil-row li:hover{filter:none;opacity:1;color:var(--navy)}
+  .affil-row img{height:46px;width:auto;display:block}
+  @media (max-width:640px){.affil-row{gap:14px 28px}.affil-row li{font-size:14px;gap:10px}.affil-row img{height:38px}}
   /* nav */
   .nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px clamp(20px,3.4vw,44px)}
   .mark{display:block;height:44px;line-height:0;flex:none}
@@ -298,10 +306,11 @@
   .pillar h3{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:24px;line-height:1.05;color:var(--navy)}
   .pillar p{color:var(--muted);font-size:15px}
   .pillar .link{margin-top:auto;color:var(--navy)}
-  .logos{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:12px;margin-top:clamp(40px,5vw,64px);padding-top:32px;border-top:1px solid rgba(255,255,255,.25)}
+  .logos-cap{text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.75);margin-top:clamp(40px,5vw,64px);padding-top:32px;border-top:1px solid rgba(255,255,255,.25)}
+  .logos{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:12px;margin-top:20px}
   @media (min-width:900px){.logos{justify-content:space-between}}
-  .logos .chip{background:#fff;border-radius:16px;padding:12px 22px;display:flex;align-items:center;justify-content:center;min-height:72px;min-width:150px;flex:1 1 150px;max-width:220px}
-  .logos img{height:44px;width:auto;max-width:130px;object-fit:contain}
+  .logos .chip{background:#fff;border-radius:16px;padding:14px 22px;display:flex;align-items:center;justify-content:center;min-height:104px;min-width:150px;flex:1 1 150px;max-width:220px}
+  .logos img{height:76px;width:auto;max-width:160px;object-fit:contain}
   .logos .wm{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:24px;letter-spacing:.02em;color:var(--navy)}
 
   /* experience list */
@@ -527,8 +536,9 @@
         <article class="pillar"><span class="n">02</span><h3>Coach education</h3><p>Certified U.S. Soccer licensing and intentional mentorship programs to empower modern educators of the game.</p><a class="link" href="#courses">See upcoming courses</a></article>
         <article class="pillar"><span class="n">03</span><h3>Player development</h3><p>Individual development plans, private and small-group training, and honest feedback built on game film.</p><a class="link" href="#contact">Request availability</a></article>
       </div>
-      <div class="logos" aria-label="Affiliations">
-        <span class="chip"><img src="img/ussf.svg" alt="U.S. Soccer"></span><span class="chip"><img src="img/royal.svg" alt="Royal Sporting Group"></span><span class="chip"><img src="img/manhasset.jpg" alt="Manhasset Soccer"></span><span class="chip"><img src="img/enyysa.png" alt="Eastern New York Youth Soccer Association" width="300" height="300"></span><span class="chip"><img src="img/lijsl.png" alt="Long Island Junior Soccer League"></span>
+      <p class="logos-cap">Clubs We Work With</p>
+      <div class="logos" aria-label="Clubs we work with">
+        <span class="chip"><img src="img/carle-place.png" alt="Carle Place Soccer Club" width="360" height="360"></span><span class="chip"><img src="img/franklin-square.png" alt="Franklin Square Raiders Soccer Club" width="360" height="360"></span><span class="chip"><img src="img/garden-city.png" alt="Garden City Centennial Soccer Club" width="360" height="360"></span><span class="chip"><img src="img/manhasset.png" alt="Manhasset Soccer Club" width="360" height="360"></span><span class="chip"><img src="img/miller-place.png" alt="Miller Place Soccer Club" width="360" height="360"></span>
       </div>
     </div>
   </section>
@@ -681,6 +691,18 @@
     </div>
   </section>
 </main>
+
+<section class="affil" aria-label="Federations and associations">
+  <div class="wrap">
+    <p class="affil-cap">Federations &amp; Associations</p>
+    <ul class="affil-row">
+      <li><img src="img/ussf.svg" alt="" width="146" height="200" decoding="async" loading="lazy"><span>U.S. Soccer</span></li>
+      <li><img src="img/royal.svg" alt="" width="2060" height="2060" decoding="async" loading="lazy"><span>Royal Sporting Group</span></li>
+      <li><img src="img/enyysa.png" alt="" width="300" height="300" decoding="async" loading="lazy"><span>Eastern New York Youth Soccer</span></li>
+      <li><img src="img/lijsl.png" alt="" width="400" height="401" decoding="async" loading="lazy"><span>Long Island Junior Soccer League</span></li>
+    </ul>
+  </div>
+</section>
 
 <footer>
   <div class="wrap foot">
