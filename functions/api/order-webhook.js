@@ -4,7 +4,7 @@
 //
 // Secrets (Pages project → Settings → Variables and Secrets, Production):
 //   LS_WEBHOOK_SECRET   – the signing secret entered when creating the webhook in Lemon Squeezy
-//   WEB3FORMS_KEY       – Web3Forms access key (same one the site's contact form uses)
+//   WEB3FORMS_KEY       – optional: Web3Forms access key (unreliable from Cloudflare IPs; LS emails you natively)
 //   SHEET_WEBHOOK_URL   – optional: Google Apps Script web-app URL that appends a row (see sheet.gs)
 //   QUO_API_KEY         – optional: Quo (OpenPhone) API key → sends an SMS on each order
 //   QUO_FROM            – optional: your Quo number in E.164 (+1516…) or its phone-number ID
@@ -52,7 +52,11 @@ async function handle(request, env) {
     };
 
     const results = {};
-    results.email = await notifyEmail(order, env).catch(e => 'error: ' + e.message);
+    // Lemon Squeezy already emails the store owner on every sale (Account → Notifications).
+    // Web3Forms is optional here and rate-limits Cloudflare egress IPs, so only use it if a key is set.
+    if (env.WEB3FORMS_KEY) {
+      results.email = await notifyEmail(order, env).catch(e => 'error: ' + e.message);
+    }
     if (env.SHEET_WEBHOOK_URL) {
       results.sheet = await appendSheet(order, env).catch(e => 'error: ' + e.message);
     }
