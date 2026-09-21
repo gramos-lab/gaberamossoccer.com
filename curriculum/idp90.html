@@ -385,7 +385,7 @@
   .step strong{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:20px;color:var(--navy)}
   .step p{font-size:14px;color:var(--muted)}
   /* product page */
-  .pp{display:grid;grid-template-columns:1fr;gap:32px;padding:clamp(28px,4vw,56px) 0}
+  .pp{display:grid;grid-template-columns:1fr;gap:32px;padding-block:clamp(28px,4vw,56px)}
   @media (min-width:900px){.pp{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}}
   .pp .gallery{display:flex;flex-direction:column;gap:12px}
   @media (min-width:900px){.pp .gallery{position:sticky;top:24px}}
@@ -441,7 +441,7 @@
   .faq summary::after{content:"+";color:var(--red);font-weight:700;font-size:20px}
   .faq details[open] summary::after{content:"\2013"}
   .faq p{color:var(--muted);font-size:15px;margin-top:8px}
-  .faq p a{color:var(--navy);font-weight:600}
+  .faq p a{color:var(--navy);font-weight:600;display:inline-block;padding:10px 0;margin:-10px 0}
   .club{background:var(--navy-deep);color:#fff;border-radius:var(--r-card);padding:26px;display:flex;flex-direction:column;gap:12px}
   .club h2,.club h3{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:22px;color:#fff;margin:0}
   .club p{color:rgba(255,255,255,.75);font-size:15px}
