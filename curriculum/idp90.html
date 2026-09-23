@@ -499,20 +499,10 @@
         <span class="eyebrow" style="margin-top:-8px"><span class="tog" aria-hidden="true"></span>For coaches &middot; any age group &middot; Excel or Google Sheets</span>
         <h1 class="d">IDP90 Individual<br>Development <em>Plan</em></h1>
         <p class="lead">Most players never sit down with their coach and plan what to work on. IDP90 fixes that: assess every player on the Four Pillars, pick two or three focus areas, write them as goals with a measure and a date, and talk it through &mdash; four times a season. The Season Tracker does the arithmetic and the paperwork. You do the coaching.</p>
-        <div class="buy thanks" id="thanks" hidden>
-          <strong class="tt">You&rsquo;re in &mdash; every player gets a plan.</strong>
-          <p>Your receipt and download link are on their way to <span id="buyer-email">your inbox</span>. It can take a minute or two to arrive; check spam if it doesn&rsquo;t.</p>
-          <ol class="next">
-            <li>Unzip the folder and open the workbook &mdash; read <em>Start here</em> and <em>The method</em> (about 20 minutes).</li>
-            <li>Open the blank Season Tracker, fill the Roster, and run one Fast assess pass.</li>
-            <li>Read the Team dashboard, then book your first sit-downs.</li>
-          </ol>
-          <p class="small">Didn&rsquo;t get the email? <a class="mail" href="/#contact" data-u="gramos" data-d="royalsportinggroup.com">Email Gabe</a> and it will be resent.</p>
-        </div>
         <div class="buy" id="buy">
           <span class="price">$99</span>
-          <a class="btn btn-red lemonsqueezy-button" href="https://gaberamossoccer.lemonsqueezy.com/checkout/buy/3a4ccab3-9967-49ba-9ce2-2035a708c05c?checkout[custom][source]=product-page" id="buybtn"><span>Buy the bundle</span><span class="arr" aria-hidden="true">&rsaquo;</span></a>
-          <span class="note">Instant download after checkout &middot; Secure payment &middot; Licensed to one coach. <a href="#club">Need it for a whole club?</a></span>
+          <a class="btn btn-red" href="https://payhip.com/buy?link=m0zI3&amp;metadata[source]=product-page" id="buybtn" rel="noopener"><span>Buy the bundle</span><span class="arr" aria-hidden="true">&rsaquo;</span></a>
+          <span class="note">Instant download after checkout &middot; Secure card payment via Stripe &middot; Licensed to one coach. <a href="#club">Need it for a whole club?</a></span>
         </div>
         <div class="specs">
           <div><span class="k">Format</span><span class="v">ZIP: PDF + 2 Excel files</span></div>
@@ -604,23 +594,6 @@
     document.querySelectorAll('a.mail[data-u]').forEach(function (m) { m.href = 'mailto:' + m.dataset.u + '@' + m.dataset.d; });
   })();
   (function(){var m=document.getElementById('gmain'),c=document.getElementById('gcap');document.querySelectorAll('.thumbs button').forEach(function(b){b.addEventListener('click',function(){m.src=b.dataset.src;c.textContent=b.dataset.cap;document.querySelectorAll('.thumbs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');});});})();
-</script>
-<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-<script>
-  window.addEventListener('load', function () {
-    if (!window.LemonSqueezy) return;
-    LemonSqueezy.Setup({
-      eventHandler: function (e) {
-        if (!e || e.event !== 'Checkout.Success') return;
-        var email = e.data && (e.data.user_email || (e.data.attributes && e.data.attributes.user_email));
-        var t = document.getElementById('thanks'), b = document.getElementById('buy');
-        if (email) document.getElementById('buyer-email').textContent = email;
-        if (b) b.hidden = true;
-        if (t) { t.hidden = false; t.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
-        try { sessionStorage.setItem('fsic-bought', '1'); } catch (x) {}
-      }
-    });
-  });
 </script>
 </body>
 </html>

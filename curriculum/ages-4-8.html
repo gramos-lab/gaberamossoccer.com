@@ -499,20 +499,10 @@
         <span class="eyebrow" style="margin-top:-8px"><span class="tog" aria-hidden="true"></span>Ages 4&ndash;8 &middot; Pre-K &middot; Kindergarten &middot; 1st &middot; 2nd grade</span>
         <h1 class="d">Full Season<br>Intramural <em>Curriculum</em></h1>
         <p class="lead">A complete season for the youngest players, written to be run by professional trainers and parent coaches alike. One page per session, two coaching points a day, and a story a child can follow &mdash; sharks, monsters and pirates first, rondos by 2nd grade.</p>
-        <div class="buy thanks" id="thanks" hidden>
-          <strong class="tt">You&rsquo;re in &mdash; see you on the island.</strong>
-          <p>Your receipt and download link are on their way to <span id="buyer-email">your inbox</span>. It can take a minute or two to arrive; check spam if it doesn&rsquo;t.</p>
-          <ol class="next">
-            <li>Open the PDF and read <em>How this curriculum works</em> &mdash; two pages, ten minutes, once.</li>
-            <li>Print the master schedule and this week&rsquo;s session page.</li>
-            <li>Fill in the parent welcome letter and send it before Week 1.</li>
-          </ol>
-          <p class="small">Didn&rsquo;t get the email? <a class="mail" href="/#contact" data-u="gramos" data-d="royalsportinggroup.com">Email Gabe</a> and it will be resent.</p>
-        </div>
         <div class="buy" id="buy">
           <span class="price">$150</span>
-          <a class="btn btn-red lemonsqueezy-button" href="https://gaberamossoccer.lemonsqueezy.com/checkout/buy/4dd0c6bc-fa02-45cc-8838-97b1d746434d?checkout[custom][source]=product-page" id="buybtn"><span>Buy the PDF</span><span class="arr" aria-hidden="true">&rsaquo;</span></a>
-          <span class="note">Instant download after checkout &middot; Secure payment &middot; Licensed to one coach. <a href="#club">Need it for a whole club?</a></span>
+          <a class="btn btn-red" href="https://payhip.com/buy?link=r2giG&amp;metadata[source]=product-page" id="buybtn" rel="noopener"><span>Buy the PDF</span><span class="arr" aria-hidden="true">&rsaquo;</span></a>
+          <span class="note">Instant download after checkout &middot; Secure card payment via Stripe &middot; Licensed to one coach. <a href="#club">Need it for a whole club?</a></span>
         </div>
         <div class="specs">
           <div><span class="k">Format</span><span class="v">PDF, print-ready (US Letter)</span></div>
@@ -601,23 +591,6 @@
     document.querySelectorAll('a.mail[data-u]').forEach(function (m) { m.href = 'mailto:' + m.dataset.u + '@' + m.dataset.d; });
   })();
   (function(){var m=document.getElementById('gmain'),c=document.getElementById('gcap');document.querySelectorAll('.thumbs button').forEach(function(b){b.addEventListener('click',function(){m.src=b.dataset.src;c.textContent=b.dataset.cap;document.querySelectorAll('.thumbs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');});});})();
-</script>
-<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-<script>
-  window.addEventListener('load', function () {
-    if (!window.LemonSqueezy) return;
-    LemonSqueezy.Setup({
-      eventHandler: function (e) {
-        if (!e || e.event !== 'Checkout.Success') return;
-        var email = e.data && (e.data.user_email || (e.data.attributes && e.data.attributes.user_email));
-        var t = document.getElementById('thanks'), b = document.getElementById('buy');
-        if (email) document.getElementById('buyer-email').textContent = email;
-        if (b) b.hidden = true;
-        if (t) { t.hidden = false; t.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
-        try { sessionStorage.setItem('fsic-bought', '1'); } catch (x) {}
-      }
-    });
-  });
 </script>
 </body>
 </html>
