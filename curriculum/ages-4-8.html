@@ -439,7 +439,14 @@
   .mod strong{display:block;color:var(--navy);font-size:15px}
   .mod em{display:block;font-style:normal;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:2px 0 4px}
   .mod span{font-size:14px;color:var(--muted)}
-  .inc{display:grid;grid-template-columns:1fr;gap:8px}
+  .vids{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:34px}
+@media (min-width:640px){.vids{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vid{margin:0;min-width:0}
+.vid video{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:14px;background:#0F1424;border:1px solid var(--line)}
+.vid figcaption{display:flex;flex-direction:column;gap:2px;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.45}
+.vid figcaption strong{color:var(--navy);font-size:14px}
+.vids-lead{color:var(--muted);font-size:15px;margin:-10px 0 16px;max-width:60ch}
+.inc{display:grid;grid-template-columns:1fr;gap:8px}
   @media (min-width:560px){.inc{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .inc li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
   .inc li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);flex:none;margin-top:3px;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/70% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/70% no-repeat}
@@ -522,6 +529,14 @@
           <div><span class="k">Season</span><span class="v">8 weeks per grade</span></div>
         </div>
 
+        <h2>See the animated videos</h2>
+        <p class="vids-lead">Three of the 112, exactly as they come in the download. Each is about 25 seconds, silent, and named to match its session page: setup first, then the movement, then the coaching point.</p>
+        <div class="vids">
+          <figure class="vid"><video controls muted playsinline preload="none" poster="/video/4-8-soccer-island.jpg" width="1920" height="1080"><source src="/video/4-8-soccer-island.mp4" type="video/mp4"></video><figcaption><strong>Soccer Island</strong><span>Pre-K &middot; Week 1 &middot; Activity 1 &middot; the game every session starts with</span></figcaption></figure>
+          <figure class="vid"><video controls muted playsinline preload="none" poster="/video/4-8-sharks-minnows.jpg" width="1920" height="1080"><source src="/video/4-8-sharks-minnows.mp4" type="video/mp4"></video><figcaption><strong>Sharks &amp; Minnows</strong><span>Pre-K &middot; Week 8 &middot; Activity 2 &middot; dribbling under pressure</span></figcaption></figure>
+          <figure class="vid"><video controls muted playsinline preload="none" poster="/video/4-8-four-goal-game.jpg" width="1920" height="1080"><source src="/video/4-8-four-goal-game.mp4" type="video/mp4"></video><figcaption><strong>4v4 Four-Goal Game</strong><span>1st Grade &middot; Week 8 &middot; Activity 4 &middot; find the open goal</span></figcaption></figure>
+        </div>
+
         <h2>Four grade-level packs, one curriculum</h2>
         <div class="mods">
           <div class="mod"><span class="n">01</span><div><strong>Pre-K</strong><em>8 weeks &middot; 45-minute sessions &middot; &ldquo;Me and my ball&rdquo;</em><span>Sharks, monsters and the coach. By the end of the season: dribble with the head up, stop and turn the ball, pass to a partner, strike at a target.</span></div></div>
@@ -540,7 +555,7 @@
 
         <h2>What&rsquo;s inside</h2>
         <ul class="inc">
-          <li><strong>112 activity videos</strong> &mdash; every activity in the book, every grade and every week, as a short animated MP4 so you can see the setup and the movement before you run it (delivered as a ZIP)</li>
+          <li><span><strong>112 activity videos</strong> &mdash; every activity in the book, every grade and every week, as a short animated MP4 so you can see the setup and the movement before you run it (delivered as a ZIP)</span></li>
           <li>36 one-page session plans (8 per grade, 12 for 2nd grade)</li>
           <li>Master schedule: all eight weeks, every grade, on one page</li>
           <li>The Soccer Island skill spiral: 3 Speeds to the Shoulder Dip</li>
