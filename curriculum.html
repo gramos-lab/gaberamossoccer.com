@@ -358,6 +358,15 @@
   .mn-social a{border-color:rgba(255,255,255,.3);color:#fff}
   .mn-social a:hover{background:#fff;border-color:#fff;color:var(--navy)}
 .try{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:clamp(22px,3vw,32px);padding:16px 20px;background:var(--off);border-radius:var(--r-card);font-size:14px;color:var(--muted)}.try strong{color:var(--navy);font-size:15px}.try-links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-left:auto}.try-links a{font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--red);padding:8px 0}.try-links a:hover{color:var(--red)}
+.vids{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:34px}
+@media (min-width:640px){.vids{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vid{margin:0;min-width:0}
+.vid video{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:14px;background:#0F1424;border:1px solid var(--line)}
+.vid figcaption{display:flex;flex-direction:column;gap:2px;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.45}
+.vid figcaption strong{color:var(--navy);font-size:14px}
+.vids-lead{color:var(--muted);font-size:15px;margin:-10px 0 16px;max-width:60ch}
+.vid-row{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
+@media (min-width:640px){.vid-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .try.vid{background:var(--navy);color:rgba(255,255,255,.78)}
 .try.vid strong{color:#fff}
 .try.vid .try-links a{color:#fff}
@@ -491,6 +500,10 @@
         <span>Every activity in the Ages 4&ndash;8 and Ages 9&ndash;12 curricula is animated &mdash; 185 short videos, named to match the session pages, delivered with the PDF at no extra cost.</span>
         <span class="try-links"><a href="/curriculum/ages-4-8">Ages 4&ndash;8: 112 videos &rsaquo;</a><a href="/curriculum/travel-9-12">Ages 9&ndash;12: 73 videos &rsaquo;</a></span>
       </div>
+      <div class="vid-row" aria-label="Sample videos">
+          <figure class="vid"><video controls muted playsinline preload="none" poster="/video/4-8-sharks-minnows.jpg" width="1920" height="1080" data-auto><source src="/video/4-8-sharks-minnows.mp4" type="video/mp4"></video><figcaption><strong>Ages 4&ndash;8 &middot; Sharks &amp; Minnows</strong><span>Pre-K &middot; Week 8 &middot; one of the 112 animated activities</span></figcaption></figure>
+          <figure class="vid"><video controls muted playsinline preload="none" poster="/video/9-12-four-line-rondo.jpg" width="1920" height="1080" data-auto><source src="/video/9-12-four-line-rondo.mp4" type="video/mp4"></video><figcaption><strong>Ages 9&ndash;12 &middot; Four-Line Rondo</strong><span>Week 1 &middot; Session 1 &middot; one of the 73 animated activities</span></figcaption></figure>
+      </div>
       <div class="try">
         <strong>Not sure which one? Try Week 1 free.</strong>
         <span>Every session, drawn and scripted, so you can run it this week. Just an email.</span>
@@ -587,6 +600,17 @@
     nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) set(false); });
     matchMedia('(min-width:900px)').addEventListener('change', function (m) { if (m.matches) set(false); });
+  })();
+  (function(){
+    // Sample videos: silent autoplay on wide screens only, never with reduced motion or data saver.
+    var ok = matchMedia('(min-width:900px) and (prefers-reduced-motion: no-preference)').matches && !(navigator.connection && navigator.connection.saveData);
+    if (!ok) return;
+    var vids = document.querySelectorAll('video[data-auto]');
+    if (!vids.length) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ var v = e.target; if (e.isIntersecting) { v.loop = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); } else { v.pause(); } });
+    }, { threshold: 0.4 });
+    vids.forEach(function(v){ v.preload = 'auto'; io.observe(v); });
   })();
   (function () {
     document.querySelectorAll('a.mail[data-u]').forEach(function (m) { m.href = 'mailto:' + m.dataset.u + '@' + m.dataset.d; });
