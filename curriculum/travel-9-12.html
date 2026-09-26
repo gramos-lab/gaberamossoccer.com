@@ -439,7 +439,14 @@
   .mod strong{display:block;color:var(--navy);font-size:15px}
   .mod em{display:block;font-style:normal;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:2px 0 4px}
   .mod span{font-size:14px;color:var(--muted)}
-  .inc{display:grid;grid-template-columns:1fr;gap:8px}
+  .vids{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:34px}
+@media (min-width:640px){.vids{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vid{margin:0;min-width:0}
+.vid video{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:14px;background:#0F1424;border:1px solid var(--line)}
+.vid figcaption{display:flex;flex-direction:column;gap:2px;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.45}
+.vid figcaption strong{color:var(--navy);font-size:14px}
+.vids-lead{color:var(--muted);font-size:15px;margin:-10px 0 16px;max-width:60ch}
+.inc{display:grid;grid-template-columns:1fr;gap:8px}
   @media (min-width:560px){.inc{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .inc li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
   .inc li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);flex:none;margin-top:3px;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/70% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/70% no-repeat}
@@ -523,6 +530,14 @@
           <div><span class="k">Season</span><span class="v">12 weeks &middot; 12 match days</span></div>
         </div>
 
+        <h2>See the animated videos</h2>
+        <p class="vids-lead">Three of the 73, exactly as they come in the download. Each is about 25 seconds, silent, and named to match its session page: setup first, then the movement, then the coaching point.</p>
+        <div class="vids">
+          <figure class="vid"><video controls muted playsinline preload="none" poster="/video/9-12-four-line-rondo.jpg" width="1920" height="1080"><source src="/video/9-12-four-line-rondo.mp4" type="video/mp4"></video><figcaption><strong>Four-Line Rondo</strong><span>Week 1 &middot; Session 1 &middot; Rondo &middot; the arrival ritual</span></figcaption></figure>
+          <figure class="vid"><video controls muted playsinline preload="none" poster="/video/9-12-lock-the-middle.jpg" width="1920" height="1080"><source src="/video/9-12-lock-the-middle.mp4" type="video/mp4"></video><figcaption><strong>Lock the Middle</strong><span>Week 7 &middot; Session 1 &middot; Solve &middot; get small, protect the middle</span></figcaption></figure>
+          <figure class="vid"><video controls muted playsinline preload="none" poster="/video/9-12-warm-up.jpg" width="1920" height="1080"><source src="/video/9-12-warm-up.mp4" type="video/mp4"></video><figcaption><strong>The 30-Minute Game-Day Warm-Up</strong><span>Match day &middot; six steps, the same before every game</span></figcaption></figure>
+        </div>
+
         <h2>Six habits, six two-week blocks</h2>
         <div class="mods">
           <div class="mod"><span class="n">01</span><div><strong>Get big</strong><em>Weeks 1&ndash;2 &middot; Positions and shape &middot; Throw-ins</em><span>When we have the ball, stretch the field. Backs split, wide players on the touchline, striker high. Players learn where they stand and why.</span></div></div>
@@ -544,7 +559,7 @@
 
         <h2>What&rsquo;s inside</h2>
         <ul class="inc">
-          <li><strong>73 activity videos</strong> &mdash; the game-day warm-up plus every rondo, sharpen and solve activity from all 24 sessions, each a short animated MP4 so you can see the setup and the movement before you run it (delivered as a ZIP)</li>
+          <li><span><strong>73 activity videos</strong> &mdash; the game-day warm-up plus every rondo, sharpen and solve activity from all 24 sessions, each a short animated MP4 so you can see the setup and the movement before you run it (delivered as a ZIP)</span></li>
           <li>24 one-page session plans, 90 minutes each, every game drawn at 7v7 and at 9v9</li>
           <li>12 match-day pages: one habit to watch, three things to look for, two halftime questions, a lineup sheet</li>
           <li>The 30-minute game-day warm-up: six timed steps, the same before every game, run by your captains by week 4</li>
