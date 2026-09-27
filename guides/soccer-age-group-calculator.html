@@ -671,13 +671,13 @@
       if(!dob.value){res.classList.remove('on');return;}
       var p=dob.value.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]);
       var u=groupNew(d,SEASON),un=u+1,uo=groupOld(d,SEASON-1);
-      res.classList.add('on');
+      res.classList.add('on');document.querySelectorAll('#chart tr.hl').forEach(function(r){r.classList.remove('hl');});
       if(u<6||u>20){document.getElementById('ugroup').textContent=u<6?'Under 6':'Adult';document.getElementById('unext').textContent=u<6?'U-'+Math.max(un,6):'Adult';document.getElementById('why').textContent=u<6?'Registered play starts at U-6. Many town programs run U-4 and U-5 clinics by the same August 1 window; ask your club.':'Players born before August 1, 2006 are past the youth age groups for 2026-27 and register in adult or college play.';document.querySelector('.facts').style.display='none';document.getElementById('fit').style.display='none';return;}
       document.querySelector('.facts').style.display='';document.getElementById('fit').style.display='';
       document.getElementById('ugroup').textContent='U-'+u;document.getElementById('unext').textContent='U-'+un;
       var mon=d.toLocaleString('en-US',{month:'long'}),after=d.getMonth()>=7;
       var w=after?d.getFullYear():d.getFullYear()-1;
-      document.getElementById('why').textContent='Born '+mon+' '+d.getDate()+', '+d.getFullYear()+', which falls in the August 1, '+w+' to July 31, '+(w+1)+' window. That window is U-'+u+' for 2026-27 and becomes U-'+un+' next season.'+(after&&uo!==u?' Under the old calendar-year rule this child would have been U-'+(uo+1)+' this season, so the change kept them a group younger.':'');
+      document.getElementById('why').textContent='Born '+mon+' '+d.getDate()+', '+d.getFullYear()+', which falls in the August 1, '+w+' to July 31, '+(w+1)+' window. That window is U-'+u+' for 2026-27 and becomes U-'+un+' next season.'+(after?' Under the old calendar-year rule this child would have been U-'+(uo+1)+' this season, so the change kept them a group younger, with most of their school class.':'');
       var f=FMT[u]||['11v11','10 + keeper'];document.getElementById('fmt').textContent=f[0];document.getElementById('fp').textContent=f[1];
       document.getElementById('grade').textContent=GRADE[u]||'';document.getElementById('old').textContent='U-'+uo+' in 2025-26';
       var c=fit(u);document.getElementById('fit').innerHTML='<div><strong>Which curriculum fits: '+c.t+'</strong><p>'+c.p+'</p></div><div class="links"><a class="btn btn-navy" href="'+c.h+'"><span>See it</span><span class="arr" aria-hidden="true">&rsaquo;</span></a>'+(c.s?'<a class="sample" href="'+c.s+'" rel="noopener">Get Week 1 free &rsaquo;</a>':'')+'</div>';
