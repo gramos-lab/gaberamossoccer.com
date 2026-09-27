@@ -493,6 +493,10 @@
   .club{background:var(--navy-deep);color:#fff;border-radius:var(--r-card);padding:26px;display:flex;flex-direction:column;gap:12px}
   .club h2,.club h3{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:22px;color:#fff;margin:0}
   .club p{color:rgba(255,255,255,.75);font-size:15px}
+.fig{margin:22px 0 6px;max-width:600px}
+.fig svg{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)}
+.fig figcaption{font-size:14px;color:var(--muted);line-height:1.5;margin-top:10px}
+.fig figcaption strong{color:var(--navy)}
 </style>
 </head>
 <body>
@@ -541,6 +545,23 @@
         <li><span>Three mids give width on both sides and a link in the middle.</span></li>
         <li><span>One striker gives the team somewhere to play forward to.</span></li>
       </ul>
+      <figure class="fig">
+        <svg viewBox="0 0 600 360" role="img" aria-label="The 2-3-1 shape: keeper, two backs, three midfielders, one striker, with lines showing who supports whom" width="600" height="360">
+          <rect x="0" y="0" width="600" height="360" rx="14" fill="#E6EFE3"/>
+          <g fill="none" stroke="#1F2742" stroke-width="2">
+            <rect x="12" y="12" width="576" height="336" rx="6"/>
+            <line x1="300" y1="12" x2="300" y2="348"/>
+            <circle cx="300" cy="180" r="42"/>
+            <rect x="12" y="95" width="70" height="170"/><rect x="518" y="95" width="70" height="170"/>
+            <rect x="6" y="150" width="6" height="60" fill="#1F2742"/><rect x="588" y="150" width="6" height="60" fill="#1F2742"/>
+          </g>
+          <g stroke="#BB2533" stroke-width="2.2" stroke-opacity=".85"><line x1="50" y1="180" x2="160" y2="95"/><line x1="50" y1="180" x2="160" y2="265"/><line x1="50" y1="180" x2="300" y2="180"/><line x1="160" y1="95" x2="160" y2="265"/><line x1="160" y1="95" x2="300" y2="40"/><line x1="160" y1="95" x2="300" y2="180"/><line x1="160" y1="265" x2="300" y2="320"/><line x1="160" y1="265" x2="300" y2="180"/><line x1="300" y1="40" x2="300" y2="180"/><line x1="300" y1="320" x2="300" y2="180"/><line x1="300" y1="40" x2="470" y2="180"/><line x1="300" y1="320" x2="470" y2="180"/><line x1="300" y1="180" x2="470" y2="180"/></g>
+          <g fill="#1F2742" font-family="Archivo,Helvetica,Arial,sans-serif" font-weight="800" font-size="13" text-anchor="middle">
+            <g transform="translate(50,180)"><circle r="19"/><text fill="#fff" dy="4.5">GK</text></g><g transform="translate(160,95)"><circle r="19"/><text fill="#fff" dy="4.5">LB</text></g><g transform="translate(160,265)"><circle r="19"/><text fill="#fff" dy="4.5">RB</text></g><g transform="translate(300,40)"><circle r="19"/><text fill="#fff" dy="4.5">LM</text></g><g transform="translate(300,180)"><circle r="19"/><text fill="#fff" dy="4.5">CM</text></g><g transform="translate(300,320)"><circle r="19"/><text fill="#fff" dy="4.5">RM</text></g><g transform="translate(470,180)"><circle r="19"/><text fill="#fff" dy="4.5">ST</text></g>
+          </g>
+        </svg>
+        <figcaption><strong>The 2-3-1, attacking left to right.</strong> The lines show who helps whom. Count the triangles: every player has two teammates close enough to pass to.</figcaption>
+      </figure>
       <p class="rule"><strong>The habit behind the shape: Get big.</strong> When we have the ball, stretch the field. Backs split, wide mids put their boots on the paint, striker high. A team that is big has passing lanes; a team that is small has none.</p>
 
       <h2>Who does what</h2>
