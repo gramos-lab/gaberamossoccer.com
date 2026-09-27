@@ -449,6 +449,18 @@
   .club{background:var(--navy-deep);color:#fff;border-radius:var(--r-card);padding:26px;display:flex;flex-direction:column;gap:12px}
   .club h2,.club h3{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:22px;color:#fff;margin:0}
   .club p{color:rgba(255,255,255,.75);font-size:15px}
+.guides{margin-top:clamp(44px,6vw,80px);padding-top:clamp(28px,4vw,44px);border-top:1px solid var(--line)}
+.guides h2.d{font-size:clamp(30px,4.4vw,48px);margin:12px 0 12px;max-width:none}
+.guide-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px}
+@media (min-width:700px){.guide-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.gcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;color:var(--ink);transition:transform .2s,box-shadow .2s}
+.gcard:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(31,39,66,.10)}
+.gcard img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.gcard .gb{padding:16px 18px 20px;display:flex;flex-direction:column;gap:7px;flex:1}
+.gcard .gk{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:700}
+.gcard strong{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:23px;line-height:1.02;color:var(--navy)}
+.gcard p{font-size:14px;color:var(--muted);margin:0;line-height:1.5}
+.gcard .go{font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--red);margin-top:auto;padding-top:8px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"VideoObject","name":"Sharks & Minnows (Ages 4–8)","description":"Animated sample activity from the Full Season Intramural Curriculum, Ages 4–8.","thumbnailUrl":"https://gaberamossoccer.com/video/4-8-sharks-minnows.jpg","contentUrl":"https://gaberamossoccer.com/video/4-8-sharks-minnows.mp4","uploadDate":"2026-09-26","duration":"PT26S","publisher":{"@type":"Organization","name":"Gabe Ramos Soccer","url":"https://gaberamossoccer.com/"}},{"@type":"VideoObject","name":"Four-Line Rondo (Ages 9–12)","description":"Animated sample activity from the Full Season Travel Curriculum, Ages 9–12.","thumbnailUrl":"https://gaberamossoccer.com/video/9-12-four-line-rondo.jpg","contentUrl":"https://gaberamossoccer.com/video/9-12-four-line-rondo.mp4","uploadDate":"2026-09-26","duration":"PT24S","publisher":{"@type":"Organization","name":"Gabe Ramos Soccer","url":"https://gaberamossoccer.com/"}}]}
@@ -571,6 +583,17 @@
           <a class="cover" href="/#contact" data-topic="Club development"><img src="/img/club-license-cover.webp" alt="Club License for clubs &amp; leagues — one purchase, every coach in your organization" width="928" height="1200" loading="lazy"></a>
           <div class="body"><span class="ages">For clubs &amp; leagues</span><h2>Club licence</h2><p>One purchase, every coach in your organization &mdash; any curriculum or coaching tool, every team, plus a live onboarding session with Gabe so your staff run it the same way.</p><div class="row"><span class="price" style="color:var(--muted)">&mdash;</span><a class="link" href="/#contact" data-topic="Club development">Ask about pricing &nearr;</a></div></div>
         </article>
+      </div>
+
+      <div class="guides" id="guides">
+        <span class="eyebrow"><span class="tog" aria-hidden="true"></span>Free coaching guides</span>
+        <h2 class="d">Three sessions you can<br>run tonight, <em>free</em></h2>
+        <p class="lead" style="max-width:62ch">Pages straight out of the books, with the setup, the rules, the coaching points and an animated video of every activity. No email, no sign-up. If they work for your team, the full season is one click away.</p>
+        <div class="guide-grid">
+        <a class="gcard" href="/guides/first-pre-k-soccer-practice"><img src="/video/4-8-soccer-island.jpg" alt="" width="1280" height="720" loading="lazy"><span class="gb"><span class="gk">Guide &middot; Ages 4&ndash;5</span><strong>A first Pre-K soccer practice that works</strong><p>Forty-five minutes, minute by minute: Soccer Island, Space Man, 3 Speeds and the game, with two coaching points.</p><span class="go">Read the guide &rsaquo;</span></span></a>
+        <a class="gcard" href="/guides/7v7-game-model-2-3-1"><img src="/video/9-12-channel-game.jpg" alt="" width="1280" height="720" loading="lazy"><span class="gb"><span class="gk">Guide &middot; Ages 9&ndash;12</span><strong>A 7v7 game model on one page: the 2-3-1</strong><p>Why the shape works, who does what with and without the ball, and the three activities that teach it in one session.</p><span class="go">Read the guide &rsaquo;</span></span></a>
+        <a class="gcard" href="/guides/rondos-6-to-10-players"><img src="/video/poss-4v2-split.jpg" alt="" width="1280" height="720" loading="lazy"><span class="gb"><span class="gk">Guide &middot; Any age</span><strong>How to run a rondo with 6 to 10 players</strong><p>Three rondos for small numbers: 3v1 square, 4v2 split and 5v2 with a link, each with a video.</p><span class="go">Read the guide &rsaquo;</span></span></a>
+        </div>
       </div>
     </div>
   </section>
