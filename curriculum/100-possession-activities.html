@@ -358,7 +358,16 @@
   .mn-social{justify-content:center;margin-top:18px}
   .mn-social a{border-color:rgba(255,255,255,.3);color:#fff}
   .mn-social a:hover{background:#fff;border-color:#fff;color:var(--navy)}
-.buy .sample{flex-basis:100%;font-size:14px;font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--red);padding:6px 0}.buy .sample:hover{color:var(--red)}</style>
+.buy .sample{flex-basis:100%;font-size:14px;font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--red);padding:6px 0}.buy .sample:hover{color:var(--red)}
+  .ytg{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:34px}
+  @media (min-width:640px){.ytg{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .yt{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#0b1f3a;color:#fff;text-decoration:none}
+  .yt img,.yt iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+  .yt .yt-play{position:absolute;left:50%;top:50%;width:62px;height:44px;transform:translate(-50%,-50%);border-radius:12px;background:#c8102e;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+  .yt .yt-play::after{content:"";border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
+  .yt .yt-t{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;font-size:14px;font-weight:600;line-height:1.3;background:linear-gradient(180deg,rgba(11,31,58,0),rgba(11,31,58,.9))}
+  .yt:hover .yt-play{background:#e0162f}
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"VideoObject","name":"3v1 Square (100 Possession Activities, #1)","description":"Animated sample activity from 100 Possession Activities: the rondo every ladder starts with.","thumbnailUrl":"https://gaberamossoccer.com/video/poss-3v1-square.jpg","contentUrl":"https://gaberamossoccer.com/video/poss-3v1-square.mp4","uploadDate":"2026-09-26","duration":"PT24S","publisher":{"@type":"Organization","name":"Gabe Ramos Soccer","url":"https://gaberamossoccer.com/"}},{"@type":"VideoObject","name":"3v2 to Two Goals (100 Possession Activities, #52)","description":"Animated sample activity from 100 Possession Activities: overloads, use the extra player.","thumbnailUrl":"https://gaberamossoccer.com/video/poss-3v2-two-goals.jpg","contentUrl":"https://gaberamossoccer.com/video/poss-3v2-two-goals.mp4","uploadDate":"2026-09-26","duration":"PT24S","publisher":{"@type":"Organization","name":"Gabe Ramos Soccer","url":"https://gaberamossoccer.com/"}},{"@type":"VideoObject","name":"Transition Game (100 Possession Activities, #100)","description":"Animated sample activity from 100 Possession Activities: the top rung, a 9v9 transition game.","thumbnailUrl":"https://gaberamossoccer.com/video/poss-transition-game.jpg","contentUrl":"https://gaberamossoccer.com/video/poss-transition-game.mp4","uploadDate":"2026-09-26","duration":"PT25S","publisher":{"@type":"Organization","name":"Gabe Ramos Soccer","url":"https://gaberamossoccer.com/"}}]}
 </script>
@@ -540,6 +549,14 @@
           <figure class="vid"><video controls muted playsinline preload="none" poster="/video/poss-transition-game.jpg" width="1920" height="1080"><source src="/video/poss-transition-game.mp4" type="video/mp4"></video><figcaption><strong>Transition Game</strong><span>Theme 10 &middot; Counter &middot; Activity 100 &middot; the top rung, 9v9</span></figcaption></figure>
         </div>
 
+        <h2>Watch the rondos and build-up explained</h2>
+        <p class="vids-lead">Free explainers drawn on the pitch, using activities from this book. <a href="https://www.youtube.com/@gaberamossoccer" rel="noopener">More on the YouTube channel</a>.</p>
+        <div class="ytg">
+                    <a class="yt" data-yt="pBxQNIs9ses" href="https://www.youtube.com/watch?v=pBxQNIs9ses" rel="noopener"><img src="https://i.ytimg.com/vi/pBxQNIs9ses/hqdefault.jpg" alt="Rondos: Why Every Session Starts With One" width="480" height="360" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span><span class="yt-t">Rondos: Why Every Session Starts With One</span></a>
+          <a class="yt" data-yt="yjdE92mq92w" href="https://www.youtube.com/watch?v=yjdE92mq92w" rel="noopener"><img src="https://i.ytimg.com/vi/yjdE92mq92w/hqdefault.jpg" alt="How to Beat a High Press" width="480" height="360" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span><span class="yt-t">How to Beat a High Press</span></a>
+          <a class="yt" data-yt="e5igD_2Raq4" href="https://www.youtube.com/watch?v=e5igD_2Raq4" rel="noopener"><img src="https://i.ytimg.com/vi/e5igD_2Raq4/hqdefault.jpg" alt="How to Beat a Low Block" width="480" height="360" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span><span class="yt-t">How to Beat a Low Block</span></a>
+        </div>
+
         <h2>Ten themes, ten rungs each</h2>
         <div class="mods">
           <div class="mod"><span class="n">01</span><div><strong>Rondos: keep it under pressure</strong><em>Habit: every session starts here &middot; 3v1 square, 4v1 with a call, 4v2 split &hellip;</em><span>Possession stripped to its bones. Ten minutes at the start of every session, all season.</span></div></div>
@@ -632,5 +649,7 @@
   })();
   (function(){var m=document.getElementById('gmain'),c=document.getElementById('gcap');document.querySelectorAll('.thumbs button').forEach(function(b){b.addEventListener('click',function(){m.src=b.dataset.src;c.textContent=b.dataset.cap;document.querySelectorAll('.thumbs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');});});})();
 </script>
+<script>document.querySelectorAll('.yt[data-yt]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0';f.title=a.querySelector('.yt-t').textContent;f.allow='accelerometer; autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;a.replaceWith(f);});});</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "VideoObject", "name": "Rondos: Why Every Session Starts With One", "description": "The five rondos you need, with the setup, scoring and coaching point for each.", "thumbnailUrl": "https://i.ytimg.com/vi/pBxQNIs9ses/maxresdefault.jpg", "embedUrl": "https://www.youtube-nocookie.com/embed/pBxQNIs9ses", "contentUrl": "https://www.youtube.com/watch?v=pBxQNIs9ses", "uploadDate": "2026-09-27", "duration": "PT4M13S", "publisher": {"@type": "Organization", "name": "Gabe Ramos Soccer", "url": "https://gaberamossoccer.com/"}}, {"@type": "VideoObject", "name": "How to Beat a High Press", "description": "Five rules for playing out under pressure, and the habit that kills you.", "thumbnailUrl": "https://i.ytimg.com/vi/yjdE92mq92w/maxresdefault.jpg", "embedUrl": "https://www.youtube-nocookie.com/embed/yjdE92mq92w", "contentUrl": "https://www.youtube.com/watch?v=yjdE92mq92w", "uploadDate": "2026-09-27", "duration": "PT3M22S", "publisher": {"@type": "Organization", "name": "Gabe Ramos Soccer", "url": "https://gaberamossoccer.com/"}}, {"@type": "VideoObject", "name": "How to Beat a Low Block", "description": "Five rules for breaking down a deep defense, and the cross that never works.", "thumbnailUrl": "https://i.ytimg.com/vi/e5igD_2Raq4/maxresdefault.jpg", "embedUrl": "https://www.youtube-nocookie.com/embed/e5igD_2Raq4", "contentUrl": "https://www.youtube.com/watch?v=e5igD_2Raq4", "uploadDate": "2026-09-27", "duration": "PT3M50S", "publisher": {"@type": "Organization", "name": "Gabe Ramos Soccer", "url": "https://gaberamossoccer.com/"}}]}</script>
 </body>
 </html>
