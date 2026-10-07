@@ -8,3 +8,6 @@
   Cache-Control: public, max-age=2592000, immutable
 /favicon*
   Cache-Control: public, max-age=604800
+/downloads/*
+  Cache-Control: public, max-age=604800
+  Content-Disposition: inline
