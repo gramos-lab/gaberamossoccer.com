@@ -1,1 +1,17 @@
+# www -> apex
 https://www.gaberamossoccer.com/* https://gaberamossoccer.com/:splat 301
+# Old WordPress site: posts, archives and feeds that Google still has indexed
+/navigating-ncaa-roster-limits-what-college-soccer-recruits-need-to-know/ / 301
+/navigating-ncaa-roster-limits-what-college-soccer-recruits-need-to-know / 301
+/blog/* / 301
+/category/* / 301
+/tag/* / 301
+/author/* / 301
+/feed/* / 301
+/feed / 301
+/wp-content/* / 301
+/wp-admin/* / 301
+/wp-login.php / 301
+/xmlrpc.php / 301
+/page/* / 301
+/comments/* / 301

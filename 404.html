@@ -29,6 +29,31 @@
   .flinks a:hover{color:#fff}
   .btn .arr{width:36px;height:36px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;font-size:16px}
 </style>
+<style id="gen">
+.nav-links a{white-space:nowrap}
+.keep{padding-block:clamp(40px,5vw,64px);border-top:1px solid var(--line)}
+.keep h2{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:clamp(26px,3.6vw,34px);color:var(--navy);line-height:1;margin:0 0 6px}
+.keep .sub{color:var(--muted);font-size:15px;margin:0 0 18px;max-width:62ch}
+.keep .guide-grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media (min-width:640px){.keep .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.keep .guide-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.keep .gcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;color:var(--ink);transition:transform .2s,box-shadow .2s}
+.keep .gcard:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(31,39,66,.10)}
+.keep .gcard img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.keep .gcard .gb{padding:16px 18px 20px;display:flex;flex-direction:column;gap:7px;flex:1}
+.keep .gcard .gk{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:700}
+.keep .gcard strong{font-family:var(--display);font-weight:800;font-stretch:88%;text-transform:uppercase;font-size:21px;line-height:1.02;color:var(--navy)}
+.keep .gcard p{font-size:14px;color:var(--muted);margin:0;line-height:1.5}
+.keep .gcard .go{font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--red);margin-top:auto;padding-top:8px}
+.ytone{margin:22px 0 8px}
+.ytone .yt{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#0b1f3a;color:#fff;text-decoration:none}
+.ytone .yt img,.ytone iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.ytone .yt-play{position:absolute;left:50%;top:50%;width:62px;height:44px;transform:translate(-50%,-50%);border-radius:12px;background:#c8102e;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.ytone .yt-play::after{content:"";border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
+.ytone .yt-t{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;font-size:14px;font-weight:600;line-height:1.3;background:linear-gradient(180deg,rgba(11,31,58,0),rgba(11,31,58,.9))}
+.ytone .yt:hover .yt-play{background:#e0162f}
+.ytone figcaption{display:flex;flex-direction:column;gap:2px;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.45}.ytone figcaption strong{color:var(--navy);font-size:14px}
+</style>
 </head>
 <body>
 <main>
@@ -37,7 +62,7 @@
   <h1>That page went out of bounds</h1>
   <p>The link you followed doesn&rsquo;t exist or has moved. Head back to the homepage to find coaching education, club development, and upcoming courses.</p>
   <a class="btn" href="/"><span>Back to homepage</span><span class="arr" aria-hidden="true">&rsaquo;</span></a>
-  <nav class="flinks" aria-label="Site links"><a href="/#who">Profile</a><a href="/#honors">Honors</a><a href="/#experience">Experience</a><a href="/#courses">Courses</a><a href="/curriculum">Coaching tools</a><a href="/#contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="https://www.instagram.com/gaberamossoccer" rel="me noopener">Instagram</a><a href="https://www.facebook.com/gaberamossoccer" rel="me noopener">Facebook</a><a href="https://www.linkedin.com/in/gaberamosmgmt/" rel="me noopener">LinkedIn</a><a href="https://x.com/gaberamossoccer" rel="me noopener">X</a></nav>
+  <nav class="flinks" aria-label="Site links"><a href="/#who">Profile</a><a href="/#honors">Honors</a><a href="/#experience">Experience</a><a href="/#courses">Courses</a><a href="/curriculum">Coaching tools</a><a href="/guides">Guides</a><a href="/#contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="https://www.instagram.com/gaberamossoccer" rel="me noopener">Instagram</a><a href="https://www.facebook.com/gaberamossoccer" rel="me noopener">Facebook</a><a href="https://www.linkedin.com/in/gaberamosmgmt/" rel="me noopener">LinkedIn</a><a href="https://x.com/gaberamossoccer" rel="me noopener">X</a></nav>
 </main>
 </body>
 </html>
