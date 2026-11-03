@@ -15,3 +15,15 @@ https://www.gaberamossoccer.com/* https://gaberamossoccer.com/:splat 301
 /xmlrpc.php / 301
 /page/* / 301
 /comments/* / 301
+# Old WordPress pages Google still crawls (Search Console, Oct 2026)
+/college-soccer-recruiting-timeline-a-year-by-year-plan-for-high-school-players/ / 301
+/college-soccer-recruiting-timeline-a-year-by-year-plan-for-high-school-players / 301
+/college-soccer-recruiting-timeline-month-by-month-checklist/ / 301
+/college-soccer-recruiting-timeline-month-by-month-checklist / 301
+/questions-to-ask-college-soccer-coaches-and-what-their-answers-mean/ / 301
+/questions-to-ask-college-soccer-coaches-and-what-their-answers-mean / 301
+/coaching-education/ /about 301
+/coaching-education /about 301
+/club-services/ /curriculum 301
+/club-services /curriculum 301
+/college-soccer-recruiting-timeline-a-year‑by‑year-plan-for-high‑school-players/ / 301
