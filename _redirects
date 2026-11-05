@@ -32,3 +32,8 @@ https://www.gaberamossoccer.com/* https://gaberamossoccer.com/:splat 301
 /college-recruiting/ / 301
 /college-recruiting / 301
 /wp-includes/* / 301
+# Grouped age pages replaced by one page per age (Nov 2026)
+/activities/age/u9-u12 /activities/age/u10 301
+/activities/age/u9-u12/ /activities/age/u10 301
+/activities/age/u11-plus /activities/age/u12 301
+/activities/age/u11-plus/ /activities/age/u12 301
